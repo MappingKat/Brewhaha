@@ -8,12 +8,12 @@ This is a rails app for ordering beverages at a brewery.  It is an online orderi
 Learning Goals
 ---------------
 
-Use TDD to drive all layers of Rails development including unit, integration, and user acceptance tests
-Design a system of models which use one-to-one, one-to-many, and many-to-many relationships
-Practice mixing HTML, CSS, and Rails templates to create an inviting and usable User Interface
-Differentiate responsibilities between components of the Rails stack
-Build a logical user-flow that moves across multiple controllers and models
-Understandings
++ Use TDD to drive all layers of Rails development including unit, integration, and user acceptance tests
++ Design a system of models which use one-to-one, one-to-many, and many-to-many relationships
++ Practice mixing HTML, CSS, and Rails templates to create an inviting and usable User Interface
++ Differentiate responsibilities between components of the Rails stack
++ Build a logical user-flow that moves across multiple controllers and models
++ Understandings
 
 Please consider the requirements below non-exhaustive guidelines for building a great customer experience. If you know something should be done but it isn’t listed below, do it.
 
@@ -32,21 +32,21 @@ Unauthenticated Users
 
 As an unauthenticated user, I can:
 
-Browse all drinks
-Browse drinks by category
-Add a drink to tab
-View tab
-Remove a drink from my tab
-Increase the quantity of drinks in my tab
-Log in, which should not clear the tab
++ Browse all drinks
++ Browse drinks by category
++ Add a drink to tab
++ View tab
++ Remove a drink from my tab
++ Increase the quantity of drinks in my tab
++ Log in, which should not clear the tab
 
 Unauthenticated users are NOT allowed to:
 
-View another user’s private data (such as current order, etc.)
-Checkout (until they log in)
-View the administrator screens or use administrator functionality
-Make themselves an administrator
-Authenticated Non-Administrators
+- View another user’s private data (such as current order, etc.)
+- Checkout (until they log in)
+- View the administrator screens or use administrator functionality
+- Make themselves an administrator
+- Authenticated Non-Administrators
 
 Allowed To:
 
