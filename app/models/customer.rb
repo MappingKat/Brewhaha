@@ -1,9 +1,7 @@
 class Customer < ActiveRecord::Base
-  authenticates_with_sorcery!
+  # authenticates_with_sorcery!
 
-  validates_confirmation_of :password,
-                            messaage: "Password should match confirmation",
-                            if: password
+  validates :admin, default: false
   
   validates :first_name, presence: true, 
             :length => {
@@ -29,27 +27,26 @@ class Customer < ActiveRecord::Base
               too_long: "must have at most %{count} words"
               }
 
-  validates :email, uniqueness: true
+  validates :email, presence: true, uniqueness: true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
+
+  validates :password, :confirmation => true, presence: true,
+            :length => { minimum: 8 }, :format => { :with => /\A(.|\d){8,12}\z/, :on => :create }
             
   has_one   :cart
   has_one   :shipping_address
   has_many  :orders
  
-  before_validation :normalize_name, on :create
+  before_validation :normalize_first_name
+  before_validation :normalize_first_name
 
   before_validation :ensure_display_name_has_a_value
 
-  after_initialize do |user|
-    puts "You have initialized a user"
-  end
-
-  after_find do |user|
-    puts "You have found a user"
-  end
+  validates_confirmation_of :password,
+                            message: "Password should match confirmation"
 
   # after_validation :set_location, on [ :create, :update ]
+  private
 
-  protected
     def ensure_display_name_has_a_value
       if display_name.nil?
         self.display_name = email unless email.blank?
@@ -57,11 +54,13 @@ class Customer < ActiveRecord::Base
     end
 
     def normalize_first_name
-      self.first_name = self.downcase.titleize
+      self.first_name = self.first_name.downcase.titleize unless self.first_name.nil?
+
     end
 
     def normalize_last_name
-      self.last_name = self.downcase.titleize
+      self.last_name = self.last_name.downcase.titleize unless self.last_name.nil?
+      
     end
 
     # def set_location

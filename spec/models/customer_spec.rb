@@ -4,12 +4,11 @@ describe Customer do
   let(:customer) { Customer.new(
     first_name:   "Randy",
     last_name:    "Goodhue",
-    display_name: "rgoodhue",
-    password:     "deadly",
     email:        "rgoodhue@gmail.com",
-    admin:        ""
-    )
-  }
+    display_name: "rgoodhue",
+    password:     "deadly99",
+    admin:        false )
+    }
 
   context "when given all correct parameters" do
     it "should be valid" do
@@ -20,7 +19,7 @@ describe Customer do
   context "when it does not have a first name" do 
     it "should be invalid" do
       customer.first_name = nil
-      expect(first_name).to be_invalid 
+      expect(customer).to be_invalid 
     end
   end
 
@@ -34,7 +33,7 @@ describe Customer do
   context "when it does not have a last name" do 
     it "should be invalid" do
       customer.last_name = nil
-      expect(first_name).to be_invalid 
+      expect(customer).not_to be_valid 
     end
   end
 
@@ -55,14 +54,14 @@ describe Customer do
   context "when it does not have an password" do
     it "should be invalid" do
       customer.password = nil
-      expect(customer).to be_invalid
+      expect(customer).not_to be_valid 
     end
   end
 
   context "should have error on password" do
     it "should be invalid" do
-      customer.password = "83203439q84%33"
-      expect(customer).to be_invalid
+      customer.password = "8"
+      expect(customer).not_to be_valid
     end
   end
 
@@ -75,14 +74,14 @@ describe Customer do
 
   context "should have error on email" do
     it "should be invalid" do
-      customer.email = "83203439q84%33"
+      customer.email = "83203439q84%33dfasfasfdsa"
       expect(customer).to be_invalid
     end
   end
 
   context "should have error on email" do
     it "shoud be invalid" do
-      customer.email = "8@8.com"
+      customer.email = "8@8/.com"
       expect(customer).to be_invalid
     end
   end
@@ -95,24 +94,19 @@ describe Customer do
   end
 
   context "when creating a product with the same name" do
-    let (:customer2) {Customer.create(
+    let(:customer2) { Customer.create(
     first_name:   "Randy",
     last_name:    "Goodhue",
     display_name: "rgoodhue",
-    password:     "deadly"
+    password:     "deadly",
     email:        "rgoodhue@gmail.com",
-    admin:        "",
+    admin:        false
     )
       }
 
     it "should be invalid" do
       customer.save
       expect(customer2).to be_invalid
-    end
-
-    it "should have an error in name" do
-      customer.save
-      expect(customer2).to have(1).error_on(:name)
     end
   end
 end
