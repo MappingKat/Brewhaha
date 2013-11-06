@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131105183744) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: true do |t|
     t.boolean  "available"
     t.string   "name"
@@ -34,6 +37,6 @@ ActiveRecord::Schema.define(version: 20131105183744) do
     t.datetime "updated_at"
   end
 
-  add_index "items", ["category_id"], name: "index_items_on_category_id"
+  add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
 
 end

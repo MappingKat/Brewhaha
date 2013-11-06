@@ -1,0 +1,10 @@
+available,name,description,price,cost,category,sort_order,abv,volume
+TRUE,HOSS RYE LAGER,"HOSS is based on the Märzen lagers of Germany. Rich, layered malt notes, with hints of cherry and dark fruits, dominate, while the unique addition of rye imparts a slightly earthy, spicy character.",400,150,,10,6.2,16
+TRUE,BARREL AGED YETI,"The spirited aging process produces a hugely complex but mellowed Yeti, with its signature roasted flavors, hints of vanilla and oak, and a whiskeyed finish.  Who says you can’t tame a beast?",700,225,,40,10.7,10
+TRUE,RUMBLE IPA,"RUMBLE IPA is an American IPA with subtle nuance. Brewed with heavy handed additions of Pacific Northwest hops, this beer is gently aged on French and American oak resulting in a wonderful balance of bitterness, caramel sweetness, vanilla, and undertones of pine and citrus.",400,125,,20,7.1,16
+FALSE,PEACH GRAND CRU,"Brewed with Colorado fruit picked right at the peak of ripeness, this Belgian-style ale marries two of our home state’s well-known offerings: great beer and fresh Palisade peaches.",1000,350,,50,12,10
+TRUE,DARK & STORMY,Gosling's Black Seal Rum and ginger beer,700,165,,10,23,8
+TRUE,CASINO COCKTAIL,"Ransom Old Tom Gin, Leopold Bros. Maraschino,lemon and orange bitters",800,200,,20,30,8
+TRUE,2011 Jacques Girardin Burgundy,"A bold, voluptuos red with soft tannins and a spicy finish",1400,400,,30,12,4
+TRUE,2009 Predator Old Vine Zin,This one has some teeth!!,1000,350,,20,12,4
+TRUE,2011 Sonoma Cutrer Chardonnay,"These grapes grow in the verdant Russian River Valley, producing a nice balance of fruit and vanilla.",1100,375,,10,11,4
