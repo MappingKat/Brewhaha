@@ -1,5 +1,5 @@
 require 'csv'
-require './app/models/item'
+require '../app/models/item'
 
 class Seeder
 
