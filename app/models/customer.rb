@@ -60,11 +60,11 @@ class Customer < ActiveRecord::Base
 
     def normalize_last_name
       self.last_name = self.last_name.downcase.titleize unless self.last_name.nil?
-      
     end
 
     # def set_location
     #   self.location = LocationService.query(self)
     # end
   end
+
 
