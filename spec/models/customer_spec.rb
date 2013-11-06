@@ -5,6 +5,7 @@ describe Customer do
     first_name:   "Randy",
     last_name:    "Goodhue",
     display_name: "rgoodhue",
+    password:     "deadly",
     email:        "rgoodhue@gmail.com",
     admin:        ""
     )
@@ -51,6 +52,20 @@ describe Customer do
     end
   end
 
+  context "when it does not have an password" do
+    it "should be invalid" do
+      customer.password = nil
+      expect(customer).to be_invalid
+    end
+  end
+
+  context "should have error on password" do
+    it "should be invalid" do
+      customer.password = "83203439q84%33"
+      expect(customer).to be_invalid
+    end
+  end
+
   context "when it does not have an email" do
     it "should be invalid" do
       customer.email = nil
@@ -84,6 +99,7 @@ describe Customer do
     first_name:   "Randy",
     last_name:    "Goodhue",
     display_name: "rgoodhue",
+    password:     "deadly"
     email:        "rgoodhue@gmail.com",
     admin:        "",
     )

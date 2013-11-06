@@ -7,7 +7,8 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :display_name
       t.string :password
       t.boolean :admin, default: false
-
+      t.references :orders
+      
       t.timestamps
     end
   end
