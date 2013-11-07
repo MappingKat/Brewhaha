@@ -54,7 +54,7 @@ class Customer < ActiveRecord::Base
     create! do |cust|
       customer.provider = auth_hash["provider"]
       customer.uid = auth_hash["uid"]
-      customer.user_name = auth_hash["info"]["nickname"]
+      customer.display_name = auth_hash["info"]["nickname"]
     end
   end
 
