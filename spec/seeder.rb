@@ -1,10 +1,10 @@
 require 'csv'
-require '../app/models/item'
+require './app/models/item'
 
 class Seeder
 
   def self.item_csv_data
-    CSV.read("./brewhaha_items.csv", headers: true, header_converters: :symbol)
+    CSV.read("./spec/brewhaha_items.csv", headers: true, header_converters: :symbol)
   end
 
   def self.load_items_csv
