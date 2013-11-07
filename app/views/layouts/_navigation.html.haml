@@ -25,8 +25,9 @@
           %li
             %a{href: "#"} Send Order
       %li
-        /- if current_customer
-        /  = link_to "Logout", signout_path
-        /- else
-        /  = link_to "Login with Twitter", "/auth/twitter?use_authorize=true"
+        - if current_customer
+          = link_to "Logout", signout_path
+        - else
+          /= link_to "Login with Twitter", "/auth/twitter"
+          = link_to "Login with Twitter", "/auth/twitter?use_authorize=true"
 
