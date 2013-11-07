@@ -1,9 +1,26 @@
-%span.category
+%h3
   = category.name
-= category.description
-= link_to 'Show', category
-= link_to 'Edit', edit_category_path(category)
-= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+%h6
+  = category.description
+  = link_to 'Show', category
+  = link_to 'Edit', edit_category_path(category)
+  = link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
 %br
-- category.items.each do |item|
-  = render :partial => 'items/listing', :locals => { :item => item }
+%table.table.table-hover.categories
+  %thead
+    %tr
+      - if "this is where we check for admin"==1
+        %th Available
+      %th Name
+      %th Description
+      %th Price
+      - if "this is where we check for admin"==1
+        %th Cost
+        %th Category
+        %th Sort order
+      %th
+      %th
+      %th
+    %tbody
+      - category.items.each do |item|
+        = render :partial => 'items/listing', :locals => { :item => item }

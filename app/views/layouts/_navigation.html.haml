@@ -21,9 +21,12 @@
             %a{href: "#"} Order 2
           %li
             %a{href: "#"} Order 3
+          - 5.times do |item|
+            %li
+              = link_to "#{item}", '#'
           %li.divider
           %li
-            %a{href: "#"} Send Order
+            = link_to 'Send Order', '#'
       %li
         - if current_customer
           = link_to "Logout", signout_path

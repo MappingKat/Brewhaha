@@ -1,5 +1,12 @@
 %h1 The Beverages:
+- if "check if admin here" == 1
+  = link_to 'New Category', new_category_path, role: "button", class:"btn btn-default"
+= link_to 'Craft Beer', '#', role: "button", class:"btn btn-default btn-category"
+= link_to 'Plain ol\' Beer', '#', role: "button", class:"btn btn-default btn-category"
+= link_to 'Cider', '#', role: "button", class:"btn btn-default btn-category"
+= link_to 'Wine', '#', role: "button", class:"btn btn-default btn-category"
+= link_to 'Cocktails', '#', role: "button", class:"btn btn-default btn-category"
+= link_to 'All', root_path, role: "button", class:"btn btn-default btn-category"
 - @categories.each do |category|
-  = render :partial => 'categories/listing', :locals => { :category => category }
-  %br
-= link_to 'New Category', new_category_path
+  .category
+    = render :partial => 'categories/listing', :locals => { :category => category }

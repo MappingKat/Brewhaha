@@ -1,14 +1,18 @@
 %h1 Listing items
+= link_to 'New Item', new_item_path, role: "button", class:"btn btn-default"
 %table
   %thead
     %tr
-      %th Available
+      - if "this is where we check for admin"==1
+        %th Available
       %th Name
       %th Description
       %th Price
-      %th Cost
+      - if "this is where we check for admin"==1
+        %th Cost
       %th Category
-      %th Sort order
+      - if "this is where we check for admin"==1
+        %th Sort order
       %th
       %th
       %th
@@ -16,4 +20,3 @@
     - @items.each do |item|
       = render :partial => 'items/listing', :locals => { :item => item }
 %br/
-= link_to 'New Item', new_item_path
