@@ -49,6 +49,10 @@ group :test do
   # gem 'guard-rspec'
 end
 
+# Authentication
+gem 'omniauth'
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
