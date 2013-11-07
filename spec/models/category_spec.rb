@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Category do
   let(:category) { Category.new(
-                    name:        "wine",
-                    description: "a beautiful taste of grapes that will taste good in your mouth",
-                    sort_order:   5 )
+                  name:        "wine",
+                  description: "a beautiful taste of grapes that will taste good in your mouth",
+                  sort_order:  5 )
               }
 
   context "when given all correct parameters" do
