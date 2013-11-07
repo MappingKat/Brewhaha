@@ -1,16 +1,19 @@
 class Customer < ActiveRecord::Base
-  # authenticates_with_sorcery!
+
+  has_one   :cart
+  has_one   :shipping_address
+  has_many  :orders
 
   validates :admin, default: false
-  
-  validates :first_name, presence: true, 
+
+  validates :first_name, presence: true,
             :length => {
               minimum: 2,
               maximum: 32,
               too_short: "must have at least %{count} words",
               too_long: "must have at most %{count} words"
             }
-            
+
   validates :last_name, presence: true,
             :length => {
              minimum: 2,
@@ -31,11 +34,8 @@ class Customer < ActiveRecord::Base
 
   validates :password, :confirmation => true, presence: true,
             :length => { minimum: 8 }, :format => { :with => /\A(.|\d){8,12}\z/, :on => :create }
-            
-  has_one   :cart
-  has_one   :shipping_address
-  has_many  :orders
- 
+
+
   before_validation :normalize_first_name
   before_validation :normalize_first_name
 
@@ -45,6 +45,19 @@ class Customer < ActiveRecord::Base
                             message: "Password should match confirmation"
 
   # after_validation :set_location, on [ :create, :update ]
+
+  def self.from_omniauth(auth_hash)
+    where(auth_hash.slice("provider", "uid")).first || create_from_omniauth(auth_hash)
+  end
+
+  def self.create_from_omniauth(auth_hash)
+    create! do |cust|
+      customer.provider = auth_hash["provider"]
+      customer.uid = auth_hash["uid"]
+      customer.user_name = auth_hash["info"]["nickname"]
+    end
+  end
+
   private
 
     def ensure_display_name_has_a_value
