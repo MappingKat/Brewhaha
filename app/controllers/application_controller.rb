@@ -10,4 +10,9 @@ private
   end
   helper_method :current_customer
 
+  def current_cart
+    @current_cart ||= Cart.new
+  end
+  helper_method :current_cart
+
 end
