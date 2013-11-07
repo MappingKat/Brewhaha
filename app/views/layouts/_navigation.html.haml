@@ -1,0 +1,32 @@
+%nav.navbar.navbar-default.navbar-inverse{role: "navigation"}
+  / Brand and toggle get grouped for better mobile display
+  .navbar-header
+    %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    %a.navbar-brand{href: "#"} BrewHahA
+  / Collect the nav links, forms, and other content for toggling
+  #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    %ul.nav.navbar-nav.navbar-right
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+          Cart
+          %b.caret
+        %ul.dropdown-menu
+          %li
+            %a{href: "#"} Order 1
+          %li
+            %a{href: "#"} Order 2
+          %li
+            %a{href: "#"} Order 3
+          %li.divider
+          %li
+            %a{href: "#"} Send Order
+      %li
+        /- if current_customer
+        /  = link_to "Logout", signout_path
+        /- else
+        /  = link_to "Login with Twitter", "/auth/twitter?use_authorize=true"
+

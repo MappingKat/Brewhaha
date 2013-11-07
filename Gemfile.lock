@@ -36,6 +36,8 @@ GEM
     addressable (2.3.5)
     arel (4.0.1)
     atomic (1.1.14)
+    bootstrap-sass (3.0.0.0)
+      sass (~> 3.2)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -61,6 +63,13 @@ GEM
       railties (>= 3.0.0)
     faker (1.2.0)
       i18n (~> 0.5)
+    haml (4.0.4)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.5)
@@ -167,10 +176,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass (~> 3.0.0.0.rc)
   capybara
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   faker
+  haml-rails (>= 0.3.4)
   jbuilder (~> 1.2)
   jquery-rails
   launchy
