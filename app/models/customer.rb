@@ -1,11 +1,8 @@
 class Customer < ActiveRecord::Base
 
-  # has_one   :cart
-  # has_one   :shipping_address
   has_many  :orders
 
   before_validation :ensure_display_name_has_a_value
-  # before_validation :normalize_name
 
   validates :admin, default: false
 
