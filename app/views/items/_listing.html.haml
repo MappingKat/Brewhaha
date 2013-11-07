@@ -1,0 +1,11 @@
+= item.available
+= item.name
+/= item.description
+= item.price
+= item.cost
+= item.category.name
+= item.sort_order
+= link_to 'Show', item, role: "button", class:"btn btn-default"
+= link_to 'Edit', edit_item_path(item), role: "button", class:"btn btn-default"
+= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, role: "button", class:"btn btn-default"
+%br
