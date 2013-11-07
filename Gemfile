@@ -7,6 +7,9 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 gem 'pg'
 
+gem 'bootstrap-sass', '~> 3.0.0.0.rc'
+gem 'haml-rails', '>= 0.3.4'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
