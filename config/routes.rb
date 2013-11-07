@@ -13,4 +13,10 @@ Brewhaha::Application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: :signout
   get 'auth/failure', to: redirect('/') #may want to add error msg
 
+  #cart routes
+  post 'cart/add/:id', to: 'carts#add', as: :add_item_to_cart
+  post 'cart/subtract/:id', to: 'carts#subtract', as: :subtract_item_from_cart
+  post 'cart/delete/:id', to: 'carts#delete', as: :delete_item_from_cart
+  post 'cart/clear', to: 'carts#destroy', as: :clear_cart
+
 end
