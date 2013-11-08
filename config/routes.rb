@@ -14,9 +14,18 @@ Brewhaha::Application.routes.draw do
   get 'auth/failure', to: redirect('/') #may want to add error msg
 
   #cart routes
-  post 'cart/add/:id', to: 'carts#add', as: :add_item_to_cart
-  post 'cart/subtract/:id', to: 'carts#subtract', as: :subtract_item_from_cart
-  post 'cart/delete/:id', to: 'carts#delete', as: :delete_item_from_cart
-  post 'cart/clear', to: 'carts#destroy', as: :clear_cart
+  post 'carts/add/:id', to: 'carts#add', as: :add_item_to_cart
+  post 'carts/subtract/:id', to: 'carts#subtract', as: :subtract_item_from_cart
+  post 'carts/delete/:id', to: 'carts#delete', as: :delete_item_from_cart
+  post 'carts/clear', to: 'carts#destroy', as: :clear_cart
+
+  #order routes
+  get 'orders', to: 'orders#index', as: :orders
+  post 'orders', to: 'orders#create'
+  get 'orders/new', to: 'orders#new', as: :new_order
+  get 'orders/:id/edit', to: 'orders#edit', as: :edit_order
+  get 'orders/:id', to: 'orders#show', as: :order
+  put 'orders/:id', to: 'orders#update'
+  delete 'orders/:id', to: 'orders#destroy'
 
 end

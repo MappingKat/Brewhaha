@@ -11,7 +11,8 @@ private
   helper_method :current_customer
 
   def current_cart
-    @current_cart ||= Cart.new
+    cart = session[:cart] || {}
+    @current_cart ||= Cart.new(cart)
   end
   helper_method :current_cart
 
