@@ -14,10 +14,30 @@
         %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
           Cart
           %b.caret
-        %ul.dropdown-menu
-          - current_cart.cart_items.each do |cart_item|
-            %li
-              = cart_item.item.name
+        %ul.dropdown-menu.cart-item
+          %table.table
+            %thead
+              %tr
+                %th
+                %th Qt.
+                %th
+                %th
+                %th Beverage
+                %th Price
+                - current_cart.cart_items.each do |cart_item|
+                  %tr
+                    %td
+                      =link_to delete_item_from_cart_path(cart_item.item_id), method: :post do
+                        %span.glyphicon.glyphicon-remove
+                    %td= cart_item.quantity
+                    %td
+                      =link_to add_item_to_cart_path(cart_item.item_id), method: :post do
+                        %span.glyphicon.glyphicon-plus
+                    %td
+                      =link_to subtract_item_from_cart_path(cart_item.item_id), method: :post do
+                        %span.glyphicon.glyphicon-minus
+                    %td= cart_item.item.name
+                    %td= cart_item.item.price
           %li.divider
           %li
             = link_to 'Send Order', '#'
