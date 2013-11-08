@@ -15,15 +15,9 @@
           Cart
           %b.caret
         %ul.dropdown-menu
-          %li
-            %a{href: "#"} Order 1
-          %li
-            %a{href: "#"} Order 2
-          %li
-            %a{href: "#"} Order 3
-          - 5.times do |item|
+          - current_cart.cart_items.each do |cart_item|
             %li
-              = link_to "#{item}", '#'
+              = cart_item.item.name
           %li.divider
           %li
             = link_to 'Send Order', '#'

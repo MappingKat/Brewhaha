@@ -8,7 +8,7 @@
     %td= item.cost
     %td= item.category.name
     %td= item.sort_order
-  %td= link_to 'Add to Order', '#', role: "button", class:"btn btn-default"
+  %td= link_to 'Add to Order', add_item_to_cart_path(item.id), role: "button", method: :post, class:"btn btn-default"
   - if "this_is_where_we_check_for_admin"==1
     %td= link_to 'Show', item, role: "button", class:"btn btn-default"
     %td= link_to 'Edit', edit_item_path(item), role: "button", class:"btn btn-default"
