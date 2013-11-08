@@ -6,7 +6,6 @@ class CartsController < ApplicationController
   end
 
   def subtract
-    current_cart.subtract_item()
   end
 
   def delete

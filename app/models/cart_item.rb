@@ -8,7 +8,7 @@ class CartItem
   end
 
   def item
-    Item.find(item_id)
+    @item ||= Item.find(item_id)
   end
 
   def add
