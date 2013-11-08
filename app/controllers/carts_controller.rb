@@ -1,8 +1,9 @@
 class CartsController < ApplicationController
 
   def add
-    puts cart_params.inspect
-    # current_cart.add_item(cart_params)
+    current_cart.add_item(params[:id])
+    session[:cart] = current_cart.to_h
+    redirect_to root_path
   end
 
   def subtract
@@ -13,12 +14,6 @@ class CartsController < ApplicationController
 
   def destroy
     current_cart.clear
-  end
-
-private
-
-  def cart_params
-      params.require(:cart_item).permit(:item_id)
   end
 
 end
