@@ -1,0 +1,362 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "", name: "author"}/
+    %title Dashboard ~ BrewHaHa
+    / Bootstrap core CSS
+    %link{href: "css/bootstrap.css", rel: "stylesheet"}/
+    / Add custom CSS here
+    %link{href: "css/sb-admin.css", rel: "stylesheet"}/
+    %link{href: "font-awesome/css/font-awesome.min.css", rel: "stylesheet"}/
+    / Page Specific CSS
+    %link{href: "http://cdn.oesmith.co.uk/morris-0.4.3.min.css", rel: "stylesheet"}/
+  %body
+    #wrapper
+      / Sidebar
+      %nav.navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "localhost:3000/admin"} BrewHaHa Admin
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav.side-nav
+            %li.active
+              %a{href: "index.html"}
+                %i.fa.fa-dashboard
+                Dashboard
+            %li
+              = link_to "All Orders", admin_orders_path
+              %i.fa.fa-bar-chart-o
+            %li
+              %a{href: "tables.html"}
+                %i.fa.fa-table
+                Update Items
+            %li
+              %a{href: "forms.html"}
+                %i.fa.fa-edit
+                Create New Items
+          %ul.nav.navbar-nav.navbar-right.navbar-user
+            %li.dropdown.messages-dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                %i.fa.fa-envelope
+                Messages
+                %span.badge 7
+                %b.caret
+              %ul.dropdown-menu
+                %li.dropdown-header 7 New Messages
+                %li.message-preview
+                  %a{href: "#"}
+                    %span.avatar
+                      %img{src: "http://placehold.it/50x50"}/
+                    %span.name Q:
+                    %span.message Hey there, I wanted to ask you something...
+                    %span.time
+                      %i.fa.fa-clock-o
+                      4:34 PM
+                %li.divider
+                %li.message-preview
+                  %a{href: "#"}
+                    %span.avatar
+                      %img{src: "http://placehold.it/50x50"}/
+                    %span.name Brian:
+                    %span.message Hey there, I wanted to ask you something...
+                    %span.time
+                      %i.fa.fa-clock-o
+                      4:34 PM
+                %li.divider
+                %li.message-preview
+                  %a{href: "#"}
+                    %span.avatar
+                      %img{src: "http://placehold.it/50x50"}/
+                    %span.name Katrina:
+                    %span.message Hey there, I wanted to ask you something...
+                    %span.time
+                      %i.fa.fa-clock-o
+                      4:34 PM
+                %li.divider
+                %li
+                  %a{href: "#"}
+                    View Inbox
+                    %span.badge 7
+            %li.dropdown.alerts-dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                %i.fa.fa-bell
+                Alerts
+                %span.badge 3
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{href: "#"}
+                    Default
+                    %span.label.label-default Default
+                %li
+                  %a{href: "#"}
+                    Primary
+                    %span.label.label-primary Primary
+                %li
+                  %a{href: "#"}
+                    Success
+                    %span.label.label-success Success
+                %li
+                  %a{href: "#"}
+                    Info
+                    %span.label.label-info Info
+                %li
+                  %a{href: "#"}
+                    Warning
+                    %span.label.label-warning Warning
+                %li
+                  %a{href: "#"}
+                    Danger
+                    %span.label.label-danger Danger
+                %li.divider
+                %li
+                  %a{href: "#"} View All
+            %li.dropdown.user-dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                %i.fa.fa-user
+                Admin 
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{href: "#"}
+                    %i.fa.fa-user
+                    Profile
+                %li
+                  %a{href: "#"}
+                    %i.fa.fa-envelope
+                    Inbox
+                    %span.badge 7
+                %li
+                  %a{href: "#"}
+                    %i.fa.fa-gear
+                    Settings
+                %li.divider
+                %li
+                  %a{href: "#"}
+                    %i.fa.fa-power-off
+                    Log Out
+        / /.navbar-collapse
+      #page-wrapper
+        .row
+          .col-lg-12
+            %h1
+              Dashboard
+              %small Statistics Overview
+            %ol.breadcrumb
+              %li.active
+                %i.fa.fa-dashboard
+                Dashboard
+            .alert.alert-success.alert-dismissable
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
+              / - if current_customer
+              /   %span
+              /     Welcome back, #{current_customer.name}
+              /   = link_to "logout", logout_path, id: "login"
+              / - else
+              /   = link_to "login", login_path, id: "logout"
+              / check out what's been going on since you were last here.
+        / /.row
+        .row
+          .col-lg-3
+            .panel.panel-info
+              .panel-heading
+                .row
+                  .col-xs-6
+                    %i.fa.fa-comments.fa-5x
+                  .col-xs-6.text-right
+                    %p.announcement-heading 456
+                    %p.announcement-text New Messages!
+              %a{href: "#"}
+                .panel-footer.announcement-bottom
+                  .row
+                    .col-xs-6
+                      View Mentions
+                    .col-xs-6.text-right
+                      %i.fa.fa-arrow-circle-right
+          .col-lg-3
+            .panel.panel-warning
+              .panel-heading
+                .row
+                  .col-xs-6
+                    %i.fa.fa-check.fa-5x
+                  .col-xs-6.text-right
+                    %p.announcement-heading 12
+                    %p.announcement-text To-Do Items
+              %a{href: "#"}
+                .panel-footer.announcement-bottom
+                  .row
+                    .col-xs-6
+                      Complete Tasks
+                    .col-xs-6.text-right
+                      %i.fa.fa-arrow-circle-right
+          .col-lg-3
+            .panel.panel-danger
+              .panel-heading
+                .row
+                  .col-xs-6
+                    %i.fa.fa-tasks.fa-5x
+                  .col-xs-6.text-right
+                    %p.announcement-heading 18
+                    %p.announcement-text Crawl Errors
+              %a{href: "#"}
+                .panel-footer.announcement-bottom
+                  .row
+                    .col-xs-6
+                      Fix Issues
+                    .col-xs-6.text-right
+                      %i.fa.fa-arrow-circle-right
+          .col-lg-3
+            .panel.panel-success
+              .panel-heading
+                .row
+                  .col-xs-6
+                    %i.fa.fa-comments.fa-5x
+                  .col-xs-6.text-right
+                    %p.announcement-heading 56
+                    %p.announcement-text New Orders!
+              %a{href: "#"}
+                .panel-footer.announcement-bottom
+                  .row
+                    .col-xs-6
+                      Complete Orders
+                    .col-xs-6.text-right
+                      %i.fa.fa-arrow-circle-right
+        / /.row
+        .row
+          .col-lg-12
+            .panel.panel-primary
+              .panel-heading
+                %h3.panel-title
+                  %i.fa.fa-bar-chart-o
+                  Traffic Statistics: October 1, 2013 - October 31, 2013
+              .panel-body
+                #morris-chart-area
+        / /.row
+        .row
+          .col-lg-4
+            .panel.panel-primary
+              .panel-heading
+                %h3.panel-title
+                  %i.fa.fa-long-arrow-right
+                  Traffic Sources: October 1, 2013 - October 31, 2013
+              .panel-body
+                #morris-chart-donut
+                .text-right
+                  %a{href: "#"}
+                    View Details
+                    %i.fa.fa-arrow-circle-right
+          .col-lg-4
+            .panel.panel-primary
+              .panel-heading
+                %h3.panel-title
+                  %i.fa.fa-clock-o
+                  Recent Activity
+              .panel-body
+                .list-group
+                  %a.list-group-item{href: "#"}
+                    %span.badge just now
+                    %i.fa.fa-calendar
+                    Calendar updated
+                  %a.list-group-item{href: "#"}
+                    %span.badge 4 minutes ago
+                    %i.fa.fa-comment
+                    Commented on a post
+                  %a.list-group-item{href: "#"}
+                    %span.badge 23 minutes ago
+                    %i.fa.fa-truck
+                    Order 392 shipped
+                  %a.list-group-item{href: "#"}
+                    %span.badge 46 minutes ago
+                    %i.fa.fa-money
+                    Invoice 653 has been paid
+                  %a.list-group-item{href: "#"}
+                    %span.badge 1 hour ago
+                    %i.fa.fa-user
+                    A new user has been added
+                  %a.list-group-item{href: "#"}
+                    %span.badge 2 hours ago
+                    %i.fa.fa-check
+                    Completed task: "pick up dry cleaning"
+                  %a.list-group-item{href: "#"}
+                    %span.badge yesterday
+                    %i.fa.fa-globe
+                    Saved the world
+                  %a.list-group-item{href: "#"}
+                    %span.badge two days ago
+                    %i.fa.fa-check
+                    Completed task: "fix error on sales page"
+                .text-right
+                  %a{href: "#"}
+                    View All Activity
+                    %i.fa.fa-arrow-circle-right
+          .col-lg-4
+            .panel.panel-primary
+              .panel-heading
+                %h3.panel-title
+                  %i.fa.fa-money
+                  Recent Transactions
+              .panel-body
+                .table-responsive
+                  %table.table.table-bordered.table-hover.table-striped.tablesorter
+                    %thead
+                      %tr
+                        %th
+                           
+                          %i.fa.fa-sort
+                        %th
+                          Order #
+                          %i.fa.fa-sort
+                        %th
+                          Order Date
+                          %i.fa.fa-sort
+                        %th
+                          Order Time
+                          %i.fa.fa-sort
+                        %th
+                          Amount (USD)
+                          %i.fa.fa-sort
+                        %th
+                          Status
+                          %i.fa.fa-sort
+                    %thead
+                    %tbody
+                    %tr
+                      - current_cart.cart_items.each do |cart_item|
+                        %tr
+                          %td
+                            =link_to delete_item_from_cart_path(cart_item.item_id), method: :post do
+                              %span.glyphicon.glyphicon-remove
+                          %td= cart_item
+                          %td
+                            =link_to add_item_to_cart_path(cart_item.item_id), method: :post do
+                              %span.glyphicon.glyphicon-plus
+                          %td
+                            =link_to subtract_item_from_cart_path(cart_item.item_id), method: :post do
+                              %span.glyphicon.glyphicon-minus
+                          %td= cart_item.item.name
+                          %td= cart_item.item.price
+                .text-right
+                  %a{href: "#"}
+                    View All Transactions
+                    %i.fa.fa-arrow-circle-right
+        .row
+      #page-wrapper
+    #wrapper
+    / Bootstrap core JavaScript
+    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    %script{src: "js/bootstrap.js"}
+    / Page Specific Plugins
+    %script{src: "//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"}
+    %script{src: "http://cdn.oesmith.co.uk/morris-0.4.3.min.js"}
+    %script{src: "js/morris/chart-data-morris.js"}
+    %script{src: "js/tablesorter/jquery.tablesorter.js"}
+    %script{src: "js/tablesorter/tables.js"} -->
+

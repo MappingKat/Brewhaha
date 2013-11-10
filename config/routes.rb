@@ -6,6 +6,9 @@ Brewhaha::Application.routes.draw do
 
   resources :customers
 
+  get 'admin', to: 'admin#index', as: :admin_index
+  post 'admin_orders', to: 'admin_orders#show', as: :admin_orders
+
   root to: 'categories#index'
 
   get 'auth/twitter/callback', to: 'sessions#create'

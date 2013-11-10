@@ -1,0 +1,16 @@
+%table{border: "1", style: "margin: 0 auto; width: 98%; table-layout: auto;"}
+  %tr
+    %th Order #
+    %th Customer
+    %th Status
+    %th Order placed at
+    %th Delete
+  - @orders.each do |order|
+    %tr
+      %td= order.id
+      %td= order.customer_id
+      %td= order.status
+      %td= order.updated_at
+      %td
+        %form
+          %button{type: "submit"} Delete
