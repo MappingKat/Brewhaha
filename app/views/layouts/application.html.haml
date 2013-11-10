@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+  %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     %title= content_for?(:title) ? yield(:title) : "BrewHahA"
     %meta{content: content_for?(:description) ? yield(:description) : "Rails Bootstrap", name: "description"}/
@@ -19,6 +20,9 @@
             .col-md-10.col-md-offset-1
               = yield
     %footer
-    
-
+    .footer-copyright.fill-white.pad2y.small.center.noprint
+      %a{href: "/tos"} Terms of service
+      +
+      %a{href: "/privacy"} Privacy policy
+      \© Brought to you by the happy people of ©Brewhaha
 
