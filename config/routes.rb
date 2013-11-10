@@ -1,4 +1,6 @@
 Brewhaha::Application.routes.draw do
+  resources :addresses
+
   resources :categories
   resources :items
 
@@ -27,5 +29,10 @@ Brewhaha::Application.routes.draw do
   get 'orders/:id', to: 'orders#show', as: :order
   put 'orders/:id', to: 'orders#update'
   delete 'orders/:id', to: 'orders#destroy'
+
+  #checkout
+  match '/checkout' => 'checkout#show', via: :get
+  match '/checkout' => 'checkout#show', via: :post
+
 
 end
