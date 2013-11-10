@@ -1,13 +1,13 @@
 !!!
 %html
   %head
-  %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     %title= content_for?(:title) ? yield(:title) : "BrewHahA"
     %meta{content: content_for?(:description) ? yield(:description) : "Rails Bootstrap", name: "description"}/
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
   %body
     %header.navbar.navbar-fixed-top
       %nav.navbar-inner
