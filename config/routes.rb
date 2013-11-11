@@ -4,6 +4,8 @@ Brewhaha::Application.routes.draw do
 
   resources :customers
 
+  resources :charges
+
   root to: 'categories#index'
 
   get 'auth/twitter/callback', to: 'sessions#create'
@@ -27,5 +29,8 @@ Brewhaha::Application.routes.draw do
   get 'orders/:id', to: 'orders#show', as: :order
   put 'orders/:id', to: 'orders#update'
   delete 'orders/:id', to: 'orders#destroy'
+
+  get 'admin', to: 'admin#index', as: :admin_index
+  post 'admin_orders', to: 'admin_orders#show', as: :admin_orders
 
 end

@@ -1,6 +1,7 @@
 class Customer < ActiveRecord::Base
 
-  has_many  :orders
+  has_many  :orderes
+  has_many  :addresses
 
   before_validation :ensure_display_name_has_a_value
 

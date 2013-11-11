@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
 
-  belongs_to :customer
+  belongs_to :customers
+  belongs_to :addresses
   has_many   :order_items
 
   validates :status, presence: true
