@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.table{
-  width: 100%;
+
+main {
+  padding-top: 100px;
+}
+
+.categories {
+
+  .name {
+    width: 300px;
+  }
 }

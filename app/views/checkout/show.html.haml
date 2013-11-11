@@ -1,9 +1,8 @@
-
-%h1 Get Your Drank on:  Order Summary
+%h2 Get Your Drank On: Review Your Order
 %table
-  %thead
+  %thead 
     %tr
-      %th Qt.
+      %th Number
       %th
       %th
       %th Beverage
@@ -23,4 +22,7 @@
           %td= cart_item.item.name
           %td= cart_item.item.price
 %br/
-%h2 Total: 
+%h2 Total: Cart.price
+
+= link_to 'Pay for it!', '#', role: "button", class:"btn btn-default btn-category"
+= image_tag "image.png" , class:"navbar header"
