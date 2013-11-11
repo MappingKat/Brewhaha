@@ -24,24 +24,32 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{href: "localhost:3000/admin"} BrewHaHa Admin
+          %a.navbar-brand{href: "/"} BrewHaHa
         .collapse.navbar-collapse.navbar-ex1-collapse
           %ul.nav.navbar-nav.side-nav
             %li.active
               %a{href: "index.html"}
                 %i.fa.fa-dashboard
-                Dashboard
+                Admin:
             %li
               = link_to "All Orders", admin_orders_path
               %i.fa.fa-bar-chart-o
+            / %li
+            /   = link_to "Update Category",
+            /     edit_category_path
+            /   %i.fa.fa-bar-chart-o
+            / %li link id
+            /   = link_to "Update Items",
+            /     edit_item_path
+            /   %i.fa.fa-bar-chart-o
             %li
-              %a{href: "tables.html"}
-                %i.fa.fa-table
-                Update Items
+              = link_to "Create New Category",
+                new_category_path
+              %i.fa.fa-bar-chart-o
             %li
-              %a{href: "forms.html"}
-                %i.fa.fa-edit
-                Create New Items
+              = link_to "Create New Item",
+                new_item_path   
+              %i.fa.fa-bar-chart-o 
           %ul.nav.navbar-nav.navbar-right.navbar-user
             %li.dropdown.messages-dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
@@ -148,12 +156,12 @@
         .row
           .col-lg-12
             %h1
-              Dashboard
-              %small Statistics Overview
+              BrewHaHa
+              %small Dashboard
             %ol.breadcrumb
               %li.active
                 %i.fa.fa-dashboard
-                Dashboard
+                Statistics Overview
             .alert.alert-success.alert-dismissable
               %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
               / - if current_customer
@@ -304,50 +312,50 @@
                   %i.fa.fa-money
                   Recent Transactions
               .panel-body
-                .table-responsive
-                  %table.table.table-bordered.table-hover.table-striped.tablesorter
-                    %thead
-                      %tr
-                        %th
+                / .table-responsive
+                /   %table.table.table-bordered.table-hover.table-striped.tablesorter
+                /     %thead
+                /       %tr
+                /         %th
                            
-                          %i.fa.fa-sort
-                        %th
-                          Order #
-                          %i.fa.fa-sort
-                        %th
-                          Order Date
-                          %i.fa.fa-sort
-                        %th
-                          Order Time
-                          %i.fa.fa-sort
-                        %th
-                          Amount (USD)
-                          %i.fa.fa-sort
-                        %th
-                          Status
-                          %i.fa.fa-sort
-                    %thead
-                    %tbody
-                    %tr
-                      - current_cart.cart_items.each do |cart_item|
-                        %tr
-                          %td
-                            =link_to delete_item_from_cart_path(cart_item.item_id), method: :post do
-                              %span.glyphicon.glyphicon-remove
-                          %td= cart_item
-                          %td
-                            =link_to add_item_to_cart_path(cart_item.item_id), method: :post do
-                              %span.glyphicon.glyphicon-plus
-                          %td
-                            =link_to subtract_item_from_cart_path(cart_item.item_id), method: :post do
-                              %span.glyphicon.glyphicon-minus
-                          %td= cart_item.item.name
-                          %td= cart_item.item.price
-                .text-right
-                  %a{href: "#"}
-                    View All Transactions
-                    %i.fa.fa-arrow-circle-right
-        .row
+                /           %i.fa.fa-sort
+                /         %th
+                /           Order #
+                /           %i.fa.fa-sort
+                /         %th
+                /           Order Date
+                /           %i.fa.fa-sort
+                /         %th
+                /           Order Time
+                /           %i.fa.fa-sort
+                /         %th
+                /           Amount (USD)
+                /           %i.fa.fa-sort
+                /         %th
+                /           Status
+                /           %i.fa.fa-sort
+        /             %thead
+        /             %tbody
+        /             %tr
+        /               - current_cart.cart_items.each do |cart_item|
+        /                 %tr
+        /                   %td
+        /                     =link_to delete_item_from_cart_path(cart_item.item_id), method: :post do
+        /                       %span.glyphicon.glyphicon-remove
+        /                   %td= cart_item
+        /                   %td
+        /                     =link_to add_item_to_cart_path(cart_item.item_id), method: :post do
+        /                       %span.glyphicon.glyphicon-plus
+        /                   %td
+        /                     =link_to subtract_item_from_cart_path(cart_item.item_id), method: :post do
+        /                       %span.glyphicon.glyphicon-minus
+        /                   %td= cart_item.item.name
+        /                   %td= cart_item.item.price
+        /         .text-right
+        /           %a{href: "#"}
+        /             View All Transactions
+        /             %i.fa.fa-arrow-circle-right
+        / .row
       #page-wrapper
     #wrapper
     / Bootstrap core JavaScript
