@@ -1,5 +1,5 @@
 %h2 Get Your Drank On: Review Your Order
-%table
+%table 
   %thead 
     %tr
       %th Number
@@ -22,7 +22,10 @@
           %td= cart_item.item.name
           %td= cart_item.item.price
 %br/
-%h2 Total: Cart.price
+%h2
+  Total: $#{current_cart.total}
 
-= link_to 'Pay for it!', '#', role: "button", class:"btn btn-default btn-category"
-= image_tag "image.png" , class:"navbar header"
+= form_tag charges_path do
+  %script.stripe-button{"data-amount" => "500", "data-description" => "A month's subscription", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}
+= link_to 'Get Some More Dranks', root_path, role: "button", class:"btn btn-default btn-category"
+= image_tag "image.png" , class:"table"

@@ -40,7 +40,7 @@
                     %td= cart_item.item.price
           %li.divider
           %li
-            = link_to 'Send Order', checkout_path
+            = link_to 'Send Order', new_charge_path
       %li
         - if current_customer
           = link_to "Logout", signout_path
