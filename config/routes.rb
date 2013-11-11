@@ -1,6 +1,4 @@
 Brewhaha::Application.routes.draw do
-  resources :addresses
-
   resources :categories
   resources :items
 
