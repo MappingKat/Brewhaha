@@ -1,12 +1,12 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :confirm]
 
   def index
     @orders = Order.all
   end
 
   def show
-    @order = O
+    @order
   end
 
   def new
@@ -20,7 +20,8 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(:status => "pending", :customer_id => session[:customer_id])
     if @order.save
-      @order.create_order_items
+      @order.create_order_items(Cart.new(session[:cart]))
+      session[:cart] = nil
       redirect_to confirm_order_path(@order.id), notice: 'Order was successfully created.'
     else
       redirect_to '/', notice: 'ERROR: order was not created.'

@@ -7,8 +7,8 @@ class Order < ActiveRecord::Base
   validates :status, presence: true
   validates :customer_id, presence: true
 
-  def create_order_items
-    Cart.new(session[:cart]).cart_items.each do |ci|
+  def create_order_items(cart)
+    cart.cart_items.each do |ci|
       OrderItem.create(
           :item_id => ci.item_id,
           :quantity => ci.quantity,
@@ -16,7 +16,13 @@ class Order < ActiveRecord::Base
           :order_id => id
         )
     end
-    session[:cart] = nil
   end
 
+  def total
+    order_items.inject(0) { |total, oi| total + oi.subtotal }
+  end
+
+  def currency
+    ActionController::Base.helpers.number_to_currency(total * 0.01)
+  end
 end
