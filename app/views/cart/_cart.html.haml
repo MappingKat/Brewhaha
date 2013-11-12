@@ -11,8 +11,3 @@
         %th Price
         - current_cart.cart_items.each do |cart_item|
           = render :partial => 'cart/cart_item', :locals => { :cart_item => cart_item }
-  %li.divider
-    - if current_customer
-      = link_to 'Send Order', orders_path, method: :post, role: "button", class:"btn btn-large btn-block btn-primary"
-    - else
-      = link_to "To Complete Order Login with Twitter", "/auth/twitter?use_authorize=true", role: "button", class:"btn btn-large btn-block btn-primary"

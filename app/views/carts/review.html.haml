@@ -1,0 +1,19 @@
+= render :partial => 'cart/cart'
+.row
+  .col-md-4
+    - if current_customer
+      = link_to review_cart_path, role: "button", class:"btn btn-large btn-block btn-primary review-buttons" do
+        .review-button
+          Send Order
+    - else
+      = link_to "/auth/twitter?use_authorize=true", role: "button", class:"btn btn-large btn-block btn-primary review-buttons" do
+        .review-button
+          To Complete Order Login with Twitter
+  .col-md-4
+    = link_to clear_cart_path, role: "button", method: :post, class: "btn btn-large btn-block btn-primary review-buttons" do
+      .review-button
+        Clear
+  .col-md-4
+    = link_to '/', role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
+      .review-button
+        Cancel

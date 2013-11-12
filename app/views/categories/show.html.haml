@@ -1,0 +1,12 @@
+.row
+  .col-md-8.drink-display
+    %h1 The Beverages:
+    =render :partial => 'categories/nav'
+    .category
+      = render :partial => 'categories/listing', :locals => { :category => @category }
+  .col-md-4
+    = render :partial => 'cart/cart'
+
+/<%= link_to 'Edit', edit_category_path(@category) %> |
+/<%= link_to 'Back', categories_path %>
+

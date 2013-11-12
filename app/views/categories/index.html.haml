@@ -1,15 +1,14 @@
-%h1 The Beverages:
-
-- if "check if admin here" == true
-  = link_to 'New Category', new_category_path, role: "button", class:"btn btn-default"
-
-= link_to 'Craft Beer', '#', role: "button", class:"btn btn-primary btn-category"
-= link_to 'Plain ol\' Beer', '#', role: "button", class:"btn btn-info btn-category"
-= link_to 'Cider', '#', role: "button", class:"btn btn-primary btn-category"
-= link_to 'Wine', '#', role: "button", class:"btn btn-info btn-category"
-= link_to 'Cocktails', '#', role: "button", class:"btn btn-primary btn-category"
-= link_to 'All', root_path, role: "button", class:"btn btn-success btn-category"
-
-- @categories.each do |category|
-  .category
-    = render :partial => 'categories/listing', :locals => { :category => category }
+.row
+  .col-md-8
+    %h4 So many styles of beer, so little time...
+    =render :partial => 'categories/nav'
+    .drink-display
+      - @categories.each do |category|
+        .category
+          = render :partial => 'categories/listing', :locals => { :category => category }
+  .col-md-4
+    = render :partial => 'cart/cart'
+    - if current_customer
+      = link_to 'Send Order', review_cart_path, role: "button", class:"btn btn-large btn-block btn-primary"
+    - else
+      = link_to "To Complete Order Login with Twitter", "/auth/twitter?use_authorize=true", role: "button", class:"btn btn-large btn-block btn-primary"
