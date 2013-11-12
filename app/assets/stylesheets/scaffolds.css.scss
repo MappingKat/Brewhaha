@@ -1,19 +1,20 @@
+
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #000;
+  color: #0066CC;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 pre {
-  background-color: #eee;
+  background-color: #000;
   padding: 10px;
   font-size: 11px;
 }
@@ -66,4 +67,6 @@ div {
     font-size: 12px;
     list-style: square;
   }
+
+ 
 }

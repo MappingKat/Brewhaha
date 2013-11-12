@@ -43,7 +43,7 @@
             %li
               - if current_customer
                 - if current_cart.total == 0 
-                  = 'Cart Empty.  Add some Drinks!'
+                  %h3="/t Cart Empty.  Add Some Drinks!"
                 - else
                   = link_to 'Send Order', orders_path, method: :post
               - else 
