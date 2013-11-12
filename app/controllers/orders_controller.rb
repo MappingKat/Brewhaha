@@ -18,13 +18,14 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(item_params)
-    if @order.save
-      current_cart = nil
-      redirect_to '/', notice: 'order was successfully created.'
+    if create_order_from_cart
+      redirect_to order_path(@order.id), notice: 'Order was successfully created.'
     else
       redirect_to '/', notice: 'ERROR: order was not created.'
     end
+  end
+
+  def confirm
   end
 
   def update
@@ -42,16 +43,36 @@ class OrdersController < ApplicationController
     redirect_to items_url
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
+private
+  def create_order_from_cart
+    @order = Order.new(:status => "pending", 
+                      :customer_id => session[:customer_id])
+    if @order.save
+      cart = Cart.new(session[:cart])
+      cart.cart_items.each do |ci|
+        OrderItem.create(
+          :item_id => ci.item_id,
+          :quantity => ci.quantity,
+          :price => ci.item.price,
+          :order_id => @order.id
+          )
+      end
+      session[:cart] = nil
+      return true  
+    else
+      @order = nil
+      return false
     end
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit(:customer_id, :status)
-    end
-end
 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_params
+    params.require(:order).permit(:customer_id, :status)
+  end
 end

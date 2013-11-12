@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    = image_tag "favicon.ico", rel: "icon", type: "image/x-icon"
+    =favicon_link_tag "favicon.ico", rel: "icon", type: "image/x-icon"
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     %title= content_for?(:title) ? yield(:title) : "BrewHahA"
     %meta{content: content_for?(:description) ? yield(:description) : "Rails Bootstrap", name: "description"}/
@@ -26,4 +26,3 @@
       +
       %a{href: "/#"} Privacy policy
       \© Brought to you by the happy people of ©Brewhaha
-      = link_to 'Admin', admin_index_path, role: "button", class:"btn btn-default btn-category"

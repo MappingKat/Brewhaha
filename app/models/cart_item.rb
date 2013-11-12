@@ -11,6 +11,10 @@ class CartItem
     @item ||= Item.find(item_id)
   end
 
+  def name
+    item.name
+  end
+
   def add
     @quantity += 1
   end
