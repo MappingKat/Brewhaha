@@ -16,4 +16,8 @@ class OrderItem < ActiveRecord::Base
      ActionController::Base.helpers.number_to_currency(subtotal * 0.01)
   end
 
+  def loz_alcohol
+    (item.abv * item.volume)
+  end
+
 end

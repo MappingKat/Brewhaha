@@ -16,4 +16,13 @@ private
   end
   helper_method :current_cart
 
+  def blood_alcohol
+    drinks = session[:drinks] || []
+    if current_customer.bac?
+      BloodAlcohol.content(drinks, current_customer.id)
+    else
+      "Cannot Calculate"
+    end
+  end
+
 end

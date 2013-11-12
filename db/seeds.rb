@@ -58,8 +58,10 @@ Customer.destroy_all
 Customer.create(
     id:           1,
     display_name: "TheRubeAbides",
-    admin:        true,
+    admin:        false,
     name:         "Brian Winterling",
+    weight:       195,
+    sex:          "male",
     provider:     "twitter",
     uid:          "1861525993",
     image:        "http://pbs.twimg.com/profile_images/378800000452817789/45df711ffe853cecd69db816f53b5672_normal.jpeg"
@@ -78,7 +80,7 @@ Customer.create(
 Customer.create(
     id:           3,
     display_name: "myShadyBaby",
-    admin:        false,
+    admin:        true,
     name:         "ShadyBaby - Brian",
     provider:     "twitter",
     uid:          "28745607",

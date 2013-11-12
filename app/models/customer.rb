@@ -23,6 +23,9 @@ class Customer < ActiveRecord::Base
               too_long: "must have at most %{count} words"
               }
 
+  validates :sex, inclusion: { in: %w(male female),
+    message: "%{value} is not a valid sex" }
+
   # validates :email, presence: true, uniqueness: true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
 
   # after_validation :set_location, on [ :create, :update ]
@@ -39,6 +42,10 @@ class Customer < ActiveRecord::Base
       cust.name = auth_hash["info"]["name"]
       cust.image = auth_hash["info"]["image"]
     end
+  end
+
+  def bac?
+    weight.nil? || sex.nil? ? false : true
   end
 
   private
