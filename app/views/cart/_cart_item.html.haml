@@ -1,5 +1,13 @@
-%li
-  = link_to "#{cart_item.name}"
-  = link_to "#{cart_item.quantity}"
-  = link_to "+", role: "button", class: "btn btn-default"
-  = link_to "-", role: "button". class: "btn btn-default"
+%tr
+  %td
+    =link_to delete_item_from_cart_path(cart_item.item_id), method: :post do
+      %span.glyphicon.glyphicon-remove
+  %td= cart_item.quantity
+  %td
+    =link_to add_item_to_cart_path(cart_item.item_id), method: :post do
+      %span.glyphicon.glyphicon-plus
+  %td
+    =link_to subtract_item_from_cart_path(cart_item.item_id), method: :post do
+      %span.glyphicon.glyphicon-minus
+  %td= cart_item.item.name
+  %td= cart_item.item.price

@@ -16,8 +16,9 @@
       .container
         .content
           .row
-            .col-md-10.col-md-offset-1
-              = yield
+            .col-md-8
+              .beer-display
+                = yield
+            .col-md-4
+              = render 'cart/cart'
     %footer
-
-
