@@ -1,26 +1,20 @@
-
-
-.container
-  .col-xs-12.col-md-8
-    %h2 Get Your Drank On: Review Your Order
-
-    %table 
-      %thead 
+%h2 Get Your Drank On: Review Your Order
+%table.table
+  %thead 
+    %tr
+      %th Quantity
+      %th Beverage
+      %th Price
+      - @order.order_items.each do |oi|
         %tr
-          %th Quantity
-          %th Beverage
-          %th Price
-          - @order.order_items.each do |oi|
-            %tr
-              %td= oi.quantity
-              %td= oi.item.name
-              %td= oi.currency
+          %td= oi.quantity
+          %td= oi.item.name
+          %td= oi.currency
 %br/
 %h2
   Total: #{@order.currency}
+.div
+= link_to 'Edit', edit_order_path, role: "button", class:"btn btn-large btn-block btn-primary" 
 
-= link_to 'Edit', edit_order_path, role: "button", class:"btn btn-default"
-
-%col4
-= form_tag charges_path do
-  %script.stripe-button{"data-amount" => "  ", "data-description" => "Purchase some drinks", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}
+= form_tag charges_path, class:"btn btn-large btn-block btn-primary" do
+  %script.stripe-button{"data-amount" => "", "data-description" => "Purchase some drinks", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}

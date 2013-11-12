@@ -14,18 +14,18 @@ p, ol, ul, td {
 }
 
 pre {
-  background-color: #000;
+  background-color: #FFF;
   padding: 10px;
   font-size: 11px;
 }
 
 a {
-  color: #000;
+  color: #FFF;
   &:visited {
     color: #666;
   }
   &:hover {
-    color: #fff;
+    color: #FFF;
     background-color: #000;
   }
 }
@@ -66,6 +66,10 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
+  }
+
+  btn {
+  
   }
 
  

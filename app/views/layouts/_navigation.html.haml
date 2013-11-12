@@ -17,37 +17,40 @@
             %b.caret
           %ul.dropdown-menu.cart-item
             %table.table 
-              %thead
-                %tr
-                  %th
-                  %th Qt.
-                  %th
-                  %th
-                  %th Beverage
-                  %th Price
-                  - current_cart.cart_items.each do |cart_item|
-                    %tr
-                      %td
-                        =link_to delete_item_from_cart_path(cart_item.item_id), method: :post do
-                          %span.glyphicon.glyphicon-remove
-                      %td= cart_item.quantity
-                      %td
-                        =link_to add_item_to_cart_path(cart_item.item_id), method: :post do
-                          %span.glyphicon.glyphicon-plus
-                      %td
-                        =link_to subtract_item_from_cart_path(cart_item.item_id), method: :post do
-                          %span.glyphicon.glyphicon-minus
-                      %td= cart_item.name
-                      %td= cart_item.price
-            %li.divider
-            %li
-              - if current_customer
-                - if current_cart.total == 0 
-                  %h3="/t Cart Empty.  Add Some Drinks!"
-                - else
-                  = link_to 'Send Order', orders_path, method: :post
-              - else 
-                = link_to "To Complete Order Login with Twitter", "/auth/twitter?use_authorize=true"
+            - if current_customer
+              - if current_cart.total == 0 
+                =image_tag("logo.jpg")
+                %h3.middle="Cart Empty.  Add Some Drinks!"
+              - else
+                %table.table 
+                  %thead
+                  %tr
+                    %th
+                    %th Qt.
+                    %th
+                    %th
+                    %th Beverage
+                    %th Price
+                    - current_cart.cart_items.each do |cart_item|
+                      %tr
+                        %td
+                          =link_to delete_item_from_cart_path(cart_item.item_id), method: :post do
+                            %span.glyphicon.glyphicon-remove
+                        %td= cart_item.quantity
+                        %td
+                          =link_to add_item_to_cart_path(cart_item.item_id), method: :post do
+                            %span.glyphicon.glyphicon-plus
+                        %td
+                          =link_to subtract_item_from_cart_path(cart_item.item_id), method: :post do
+                            %span.glyphicon.glyphicon-minus
+                        %td= cart_item.name
+                        %td= cart_item.price
+                %li.divider
+                  %li
+                    = link_to 'Send Order', orders_path, method: :post, class:"btn btn-large btn-block btn-primary"
+            - else 
+              = link_to "To Complete Order Login with Twitter", "/auth/twitter?use_authorize=true"
+              
       %li
         - if current_customer
           = link_to "Logout", signout_path
