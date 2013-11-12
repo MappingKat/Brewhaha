@@ -3,7 +3,7 @@
     %td= item.available
   %td.name= item.name
   %td= item.description
-  %td= item.price
+  %td= number_to_currency(item.price * 0.01)
   - if "this is where we check for admin"==1
     %td= item.cost
     %td= item.category.name

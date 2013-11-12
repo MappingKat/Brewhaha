@@ -1,12 +1,14 @@
 !!!
 %html
   %head
+    =favicon_link_tag "favicon.ico", rel: "icon", type: "image/x-icon"
     %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
     %title= content_for?(:title) ? yield(:title) : "BrewHahA"
     %meta{content: content_for?(:description) ? yield(:description) : "Rails Bootstrap", name: "description"}/
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    
   %body
     %header.navbar.navbar-fixed-top
       %nav.navbar-inner
@@ -16,8 +18,11 @@
       .container
         .content
           .row
-            .col-md-8.col-md-offset-2
+            .col-md-10.col-md-offset-1
               = yield
     %footer
-
-
+      .col-lg-4
+      %a{href: "/#"} Terms of service
+      +
+      %a{href: "/#"} Privacy policy
+      \© Brought to you by the happy people of ©Brewhaha

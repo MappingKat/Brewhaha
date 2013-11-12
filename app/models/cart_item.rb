@@ -2,13 +2,17 @@ class CartItem
 
   attr_reader :item_id, :quantity
 
-  def initialize(item_id)
+  def initialize(item_id, quantity=1)
     @item_id = item_id
-    @quantity ||= 1
+    @quantity = quantity || 1
   end
 
   def item
     @item ||= Item.find(item_id)
+  end
+
+  def name
+    item.name
   end
 
   def add

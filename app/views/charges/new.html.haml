@@ -1,0 +1,31 @@
+%h2 Get Your Drank On: Review Your Order
+%table 
+  %thead 
+    %tr
+      %th Number
+      %th
+      %th
+      %th Beverage
+      %th Price
+      - current_cart.cart_items.each do |cart_item|
+        %tr
+          %td
+            =link_to delete_item_from_cart_path(cart_item.item_id), method: :post do
+              %span.glyphicon.glyphicon-remove
+          %td= cart_item.quantity
+          %td
+            =link_to add_item_to_cart_path(cart_item.item_id), method: :post do
+              %span.glyphicon.glyphicon-plus
+          %td
+            =link_to subtract_item_from_cart_path(cart_item.item_id), method: :post do
+              %span.glyphicon.glyphicon-minus
+          %td= cart_item.name
+          %td= cart_item.price 
+%br/
+%h2
+  Total: #{current_cart.price}
+
+= form_tag charges_path do
+  %script.stripe-button{"data-amount" => "#{current_cart.price}", "data-description" => "Purchase some drinks", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}
+= link_to 'Get Some More Dranks', root_path, role: "button", class:"btn btn-default btn-category"
+= image_tag "image.png" , class:"table"
