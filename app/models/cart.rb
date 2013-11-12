@@ -42,12 +42,6 @@ class Cart
     ActionController::Base.helpers.number_to_currency(total * 0.01)
   end
 
-#private
-
-  def update_session_cart
-    session[:cart] = to_h
-  end
-
   def to_h
     cart_items.each_with_object(Hash.new) { |ci, hash| hash[ci.item_id] = ci.quantity }
   end

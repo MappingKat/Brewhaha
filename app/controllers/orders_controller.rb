@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order
+    @order = O
   end
 
   def new
@@ -18,8 +18,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    if create_order_from_cart
-      redirect_to order_path(@order.id), notice: 'Order was successfully created.'
+    @order = Order.new(:status => "pending", :customer_id => session[:customer_id])
+    if @order.save
+      @order.create_order_items
+      redirect_to confirm_order_path(@order.id), notice: 'Order was successfully created.'
     else
       redirect_to '/', notice: 'ERROR: order was not created.'
     end
@@ -44,28 +46,6 @@ class OrdersController < ApplicationController
   end
 
 private
-  def create_order_from_cart
-    @order = Order.new(:status => "pending", 
-                      :customer_id => session[:customer_id])
-    if @order.save
-      cart = Cart.new(session[:cart])
-      cart.cart_items.each do |ci|
-        OrderItem.create(
-          :item_id => ci.item_id,
-          :quantity => ci.quantity,
-          :price => ci.item.price,
-          :order_id => @order.id
-          )
-      end
-      session[:cart] = nil
-      return true  
-    else
-      @order = nil
-      return false
-    end
-  end
-
-
   # Use callbacks to share common setup or constraints between actions.
   def set_order
     @order = Order.find(params[:id])

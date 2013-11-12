@@ -20,6 +20,8 @@ class CartsController < ApplicationController
 
   def destroy
     current_cart.clear
+    session[:cart] = current_cart.to_h
+    redirect_to root_path
   end
 
 end
