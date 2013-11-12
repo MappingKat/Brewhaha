@@ -30,5 +30,6 @@ private
       "Cannot Calculate"
     end
   end
+  helper_method :blood_alcohol
 
 end

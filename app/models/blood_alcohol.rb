@@ -40,9 +40,6 @@ class BloodAlcohol
 
   # TO DO
   # add method to set session[:drinks] when order is confirmed
-  # figure out how to calculate difference in date
-  # add to OrderItems a tag for myDrink
-
 
   # changes to model:
   # Order - method to return OrderItems customer is drinking
