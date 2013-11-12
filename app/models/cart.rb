@@ -20,24 +20,20 @@ class Cart
     else
       @cart_items << CartItem.new(item_id)
     end
-    #update_session_cart
   end
 
   def subtract_item(item_id)
     if find(item_id)
       find(item_id).subtract
     end
-    #update_session_cart
   end
 
   def delete_item(item_id)
     cart_items.delete_if { |ci| ci.item.id == item_id }
-    #update_session_cart
   end
 
   def clear
     @cart_items = []
-    #update_session_cart
   end
 
   def total
@@ -46,12 +42,6 @@ class Cart
 
   def price
     ActionController::Base.helpers.number_to_currency(total * 0.01)
-  end
-
-#private
-
-  def update_session_cart
-   # session[:cart] = to_h
   end
 
   def to_h

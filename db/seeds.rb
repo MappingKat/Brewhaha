@@ -52,3 +52,35 @@ Category.create(
     description:  "Johnny Appleseed in a pint glass.",
     sort_order:   50,
   )
+
+Customer.destroy_all
+
+Customer.create(
+    id:           1,
+    display_name: "TheRubeAbides",
+    admin:        true,
+    name:         "Brian Winterling",
+    provider:     "twitter",
+    uid:          "1861525993",
+    image:        "http://pbs.twimg.com/profile_images/378800000452817789/45df711ffe853cecd69db816f53b5672_normal.jpeg"
+  )
+
+Customer.create(
+    id:           2,
+    display_name: "MappingKat",
+    admin:        true,
+    name:         "Katrina Engelsted",
+    provider:     "twitter",
+    uid:          "386676260",
+    image:        "http://pbs.twimg.com/profile_images/2591519611/cu3a0rg573rerw0sf8iw_normal.png"
+  )
+
+Customer.create(
+    id:           3,
+    display_name: "myShadyBaby",
+    admin:        false,
+    name:         "ShadyBaby - Brian",
+    provider:     "twitter",
+    uid:          "28745607",
+    image:        "http://pbs.twimg.com/profile_images/121089562/SB_avitar_normal.jpg"
+  )
