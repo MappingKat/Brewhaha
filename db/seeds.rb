@@ -84,3 +84,13 @@ Customer.create(
     uid:          "28745607",
     image:        "http://pbs.twimg.com/profile_images/121089562/SB_avitar_normal.jpg"
   )
+
+Customer.create(
+  id: 4,
+  display_name: "QuillyT",
+  admin: true,
+  name: "Quentin Tai",
+  provider: "twitter",
+  uid: "20703965",
+  image: "http://pbs.twimg.com/profile_images/1858010175/313339_10100210771768496_1510176_48196641_1670461624_n_normal.jpg"
+)

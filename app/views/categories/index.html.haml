@@ -2,13 +2,14 @@
 
 - if "check if admin here" == true
   = link_to 'New Category', new_category_path, role: "button", class:"btn btn-default"
- 
+
 = link_to 'Craft Beer', '#', role: "button", class:"btn btn-primary btn-category"
 = link_to 'Plain ol\' Beer', '#', role: "button", class:"btn btn-info btn-category"
 = link_to 'Cider', '#', role: "button", class:"btn btn-primary btn-category"
 = link_to 'Wine', '#', role: "button", class:"btn btn-info btn-category"
 = link_to 'Cocktails', '#', role: "button", class:"btn btn-primary btn-category"
 = link_to 'All', root_path, role: "button", class:"btn btn-success btn-category"
+
 - @categories.each do |category|
   .category
     = render :partial => 'categories/listing', :locals => { :category => category }
