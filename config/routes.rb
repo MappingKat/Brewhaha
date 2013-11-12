@@ -20,6 +20,7 @@ Brewhaha::Application.routes.draw do
   post 'carts/subtract/:id', to: 'carts#subtract', as: :subtract_item_from_cart
   post 'carts/delete/:id', to: 'carts#delete', as: :delete_item_from_cart
   post 'carts/clear', to: 'carts#destroy', as: :clear_cart
+  get 'carts/review', to: 'carts#review', as: :review_cart
 
   #order routes
   get 'orders', to: 'orders#index', as: :orders

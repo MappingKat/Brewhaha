@@ -1,14 +1,13 @@
-
 body {
+  background-image: url(barrels.jpg);
   background-color: #000;
-  color: #0066CC;
-  font-family: verdana, arial, helvetica, sans-serif;
+  color: #ffffff;
   font-size: 14px;
   line-height: 16px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'Average Sans', sans-serif;
   font-size: 14px;
   line-height: 16px;
 }
@@ -34,6 +33,10 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+}
+
+.displays {
+  background: url(transparent_background.png)
 }
 
 #notice {
