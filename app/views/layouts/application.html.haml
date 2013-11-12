@@ -8,7 +8,7 @@
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-    
+
   %body
     %header.navbar.navbar-fixed-top
       %nav.navbar-inner
@@ -18,8 +18,10 @@
       .container
         .content
           .row
-            .col-md-10.col-md-offset-1
+            .col-md-8
               = yield
+            .col-md-4
+              = render :partial => 'cart/cart'
     %footer
       .col-lg-4
       %a{href: "/#"} Terms of service
