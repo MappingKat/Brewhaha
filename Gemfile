@@ -54,7 +54,6 @@ gem 'omniauth'
 gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
 
 #checkout with credit card
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
