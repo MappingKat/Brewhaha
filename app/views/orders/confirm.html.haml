@@ -1,0 +1,20 @@
+%h2 Get Your Drank On: Review Your Order
+%table 
+  %thead 
+    %tr
+      %th Quantity
+      %th Beverage
+      %th Price
+      - @order.order_items.each do |oi|
+        %tr
+          %td= oi.quantity
+          %td= oi.item.name
+          %td= oi.currency
+%br/
+%h2
+  Total: #{@order.currency}
+
+= link_to 'Edit', edit_order_path, role: "button", class:"btn btn-default"
+= link_to 'Pay!', charges_path, method: :post, role: "button", class:"btn btn-default"
+= form_tag charges_path do
+  %script.stripe-button{"data-amount" => "  ", "data-description" => "Purchase some drinks", "data-key" => Rails.configuration.stripe[:publishable_key], src: "https://checkout.stripe.com/checkout.js"}

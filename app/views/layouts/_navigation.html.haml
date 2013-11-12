@@ -42,7 +42,10 @@
             %li.divider
             %li
               - if current_customer
-                = link_to 'Send Order', orders_path, method: :post
+                - if current_cart.total == 0 
+                  = 'Cart Empty.  Add some Drinks!'
+                - else
+                  = link_to 'Send Order', orders_path, method: :post
               - else 
                 = link_to "To Complete Order Login with Twitter", "/auth/twitter?use_authorize=true"
       %li

@@ -29,7 +29,7 @@ Brewhaha::Application.routes.draw do
   get 'orders/:id', to: 'orders#show', as: :order
   put 'orders/:id', to: 'orders#update'
   delete 'orders/:id', to: 'orders#destroy'
-  get 'orders/:id/confirm', to: 'order#confirm', as: :confirm_order
+  get 'orders/:id/confirm', to: 'orders#confirm', as: :confirm_order
 
   get 'admin', to: 'admin#index', as: :admin_index
   post 'admin_orders', to: 'admin_orders#show', as: :admin_orders
