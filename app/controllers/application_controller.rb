@@ -11,13 +11,19 @@ private
   helper_method :current_customer
 
   def current_cart
+    binding.pry
     cart = session[:cart] || {}
     @current_cart ||= Cart.new(cart)
   end
   helper_method :current_cart
 
   def blood_alcohol
-    drinks = session[:drinks] || []
+    # drinks = session[:drinks] || []
+    drinks = [
+      {time: 50.minutes.ago, loz: 0.594},
+      {time: 20.minutes.ago, loz: 0.84},
+      {time: 5.minutes.ago, loz: 1.8}
+    ]
     if current_customer.bac?
       BloodAlcohol.content(drinks, current_customer.id)
     else
