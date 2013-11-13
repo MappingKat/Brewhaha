@@ -4,7 +4,9 @@ Brewhaha::Application.routes.draw do
 
   resources :customers
 
-  resources :charges
+  resources :admin
+
+  resources :admin_orders
 
   root to: 'categories#index'
 

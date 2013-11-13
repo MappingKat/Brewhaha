@@ -1,31 +1,23 @@
 class AdminOrdersController < ApplicationController
+  
   def index
     @orders = Order.all
+    @customers = Customer.all
+    @items = Item.all
+    @order_items = OrderItem.all
   end
 
   def show
     @order = Order.find(params[:id])
   end
-  
-  def add
-    current_cart.add_item(params[:id])
-    session[:cart] = current_cart.to_h
-    redirect_to root_path
-  end
-
-  def subtract
-    current_cart.subtract_item(params[:id])
-    session[:cart] = current_cart.to_h
-    redirect_to root_path
-  end
-
-  def delete
-    current_cart.delete_item(params[:id])
-    session[:cart] = current_cart.to_h
-    redirect_to root_path
-  end
 
   def destroy
-    current_cart.clear
+    @order = Order.find(params[:id])
+    @order.destroy
+
+    flash.notice = "Order number #{@order.id} removed!"
+
+    redirect_to admin_orders_path
   end
+
 end
