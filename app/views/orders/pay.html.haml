@@ -31,11 +31,11 @@
 .row
   .col-md-4
     .button-wrapper
-      =link_to payment_confirmation_path, role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
-        .review-button-1
-          Submit
-  .col-md-4
-    .button-wrapper
       =link_to review_cart_path, role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
         .review-button-1
           Cancel
+  .col-md-4
+    .button-wrapper
+      =link_to complete_order_path, role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
+        .review-button-1
+          Submit Payment -- Bottoms Up!

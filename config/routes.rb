@@ -33,8 +33,7 @@ Brewhaha::Application.routes.draw do
   put 'orders/:id', to: 'orders#update'
   delete 'orders/:id', to: 'orders#destroy'
   get 'orders/:id/confirm', to: 'orders#confirm', as: :confirm_order
-
-  get 'payment', to: 'payment#index', as: :payment
-  get 'payment/confirm', to: 'payment#confirm', as: :payment_confirmation
+  get 'orders/:id/pay', to: 'orders#pay', as: :pay_for_order
+  get 'orders/:id/complete', to: 'orders#complete', as: :complete_order
 
 end

@@ -15,10 +15,10 @@
           I need to add more tasty beverages!
     .col-md-4
       - if current_customer
-        = link_to payment_path, role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
+        = link_to orders_path, method: :POST, role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
           .review-button-1
             %strong
-              Send Order
+              Enter Payment Method
       - else
         = link_to "/auth/twitter?use_authorize=true", role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
           .review-button-1
