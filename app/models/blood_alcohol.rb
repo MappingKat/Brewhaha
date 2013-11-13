@@ -43,12 +43,9 @@ class BloodAlcohol
     end
 
   # TO DO
-  # add method to set session[:drinks] when order is confirmed
 
   # changes to model:
   # Order - method to return OrderItems customer is drinking
-  # Order - method to return the liquid alcohol of those drinks
-  # Order - method to return the time those drinks were ordered
 
   #changes to view:
   # in the navbar, need to have button to "calculate BAC" when logged in.
@@ -57,8 +54,6 @@ class BloodAlcohol
 
   #consider adding categories of drunkness to warn them not to drive
   #or make some jokes...
-
-  # clear session[:drinks] on logout
 
   end
 
