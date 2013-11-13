@@ -1,13 +1,13 @@
 - unless admin?
-  =render :partial => '_index'
+  = render :partial => 'categories/categories'
 - else
   .row
     .col-md-12
       %h4 So many styles of beer, so little time...
-      =render :partial => 'categories/nav'
-      .drink-display
-        .displays-container
-          .displays.clearfix
-            - @categories.each do |category|
+      = render :partial => 'categories/nav'
+        .drink-display
+          .displays-container
+            .displays.clearfix
+              - @categories.each do |category|
               .category
-                = render :partial => 'categories/listing', :locals => { :category => category }
+              = render :partial => 'categories/listing', :locals => { :category => category }
