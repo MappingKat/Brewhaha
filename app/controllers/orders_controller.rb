@@ -25,7 +25,6 @@ class OrdersController < ApplicationController
         session[:drinks] = []
       end
       session[:drinks] += @order.my_drinks
-      binding.pry
       session[:cart] = nil
       redirect_to '/', notice: 'Order was successfully created.'
     else

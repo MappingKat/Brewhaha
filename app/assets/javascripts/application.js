@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+  $(document).keydown(function(e) {
+    e.preventDefault();
+    if (e.which == 16) {
+      alert("show admin button")
+    }
+  });
+});
