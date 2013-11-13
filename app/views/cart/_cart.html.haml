@@ -1,14 +1,17 @@
 - unless admin?
-  %ul.cart
-    %li
-      %table.table
-        %thead
-        %tr
-          %th
-          %th Qt.
-          %th
-          %th
-          %th Beverage
-          %th Price
-          - current_cart.cart_items.each do |cart_item|
-            = render :partial => 'cart/cart_item', :locals => { :cart_item => cart_item }
+%ul.cart
+  %li
+    %table.table
+      %thead
+      %tr
+        %th
+        %th Qt.
+        %th
+        %th
+        %th Beverage
+        %th Price
+        - current_cart.cart_items.each do |cart_item|
+          = render :partial => 'cart/cart_item', :locals => { :cart_item => cart_item }
+  %li.push-left
+    -if current_cart.empty?
+      Cart is empty. Order Up!

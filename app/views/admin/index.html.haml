@@ -290,57 +290,6 @@
                   %a{href: "#"}
                     View All Activity
                     %i.fa.fa-arrow-circle-right
-          .col-lg-4
-            .panel.panel-primary
-              .panel-heading
-                %h3.panel-title
-                  %i.fa.fa-money
-                  Recent Transactions
-              .panel-body
-                / .table-responsive
-                /   %table.table.table-bordered.table-hover.table-striped.tablesorter
-                /     %thead
-                /       %tr
-                /         %th
-                           
-                /           %i.fa.fa-sort
-                /         %th
-                /           Order #
-                /           %i.fa.fa-sort
-                /         %th
-                /           Order Date
-                /           %i.fa.fa-sort
-                /         %th
-                /           Order Time
-                /           %i.fa.fa-sort
-                /         %th
-                /           Amount (USD)
-                /           %i.fa.fa-sort
-                /         %th
-                /           Status
-                /           %i.fa.fa-sort
-        /             %thead
-        /             %tbody
-        /             %tr
-        /               - current_cart.cart_items.each do |cart_item|
-        /                 %tr
-        /                   %td
-        /                     =link_to delete_item_from_cart_path(cart_item.item_id), method: :post do
-        /                       %span.glyphicon.glyphicon-remove
-        /                   %td= cart_item
-        /                   %td
-        /                     =link_to add_item_to_cart_path(cart_item.item_id), method: :post do
-        /                       %span.glyphicon.glyphicon-plus
-        /                   %td
-        /                     =link_to subtract_item_from_cart_path(cart_item.item_id), method: :post do
-        /                       %span.glyphicon.glyphicon-minus
-        /                   %td= cart_item.item.name
-        /                   %td= cart_item.item.price
-        /         .text-right
-        /           %a{href: "#"}
-        /             View All Transactions
-        /             %i.fa.fa-arrow-circle-right
-        / .row
       #page-wrapper
     #wrapper
     / Bootstrap core JavaScript

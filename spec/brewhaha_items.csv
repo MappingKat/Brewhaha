@@ -1,15 +1,15 @@
 id,available,name,description,price,cost,category_id,sort_order,abv,volume
-1,TRUE,HOSS RYE LAGER,"HOSS is based on the Märzen lagers of Germany. Rich, layered malt notes, with hints of cherry and dark fruits, dominate, while the unique addition of rye imparts a slightly earthy, spicy character.",400,150,4,10,6.2,16
-2,TRUE,BARREL AGED YETI,"The spirited aging process produces a hugely complex but mellowed Yeti, with its signature roasted flavors, hints of vanilla and oak, and a whiskeyed finish.  Who says you can’t tame a beast?",700,225,4,40,10.7,10
-3,TRUE,RUMBLE IPA,"RUMBLE IPA is an American IPA with subtle nuance. Brewed with heavy handed additions of Pacific Northwest hops, this beer is gently aged on French and American oak resulting in a wonderful balance of bitterness, caramel sweetness, vanilla, and undertones of pine and citrus.",400,125,4,20,7.1,16
-4,FALSE,PEACH GRAND CRU,"Brewed with Colorado fruit picked right at the peak of ripeness, this Belgian-style ale marries two of our home state’s well-known offerings: great beer and fresh Palisade peaches.",1000,350,4,50,12,10
-5,TRUE,DARK & STORMY,Gosling's Black Seal Rum and ginger beer,700,165,1,10,23,8
-6,TRUE,CASINO COCKTAIL,"Ransom Old Tom Gin, Leopold Bros. Maraschino,lemon and orange bitters",800,200,1,20,30,8
-7,TRUE,2011 Jacques Girardin Burgundy,"A bold, voluptuos red with soft tannins and a spicy finish",1400,400,2,30,12,4
-8,TRUE,2009 Predator Old Vine Zin,This one has some teeth!!,1000,350,2,20,12,4
-9,TRUE,2011 Sonoma Cutrer Chardonnay,"These grapes grow in the verdant Russian River Valley, producing a nice balance of fruit and vanilla.",1100,375,2,10,11,4
-10,TRUE,Pabst Blue Ribbon,Winner of World's Best Beer in 1893.,300,75,3,10,4.2,12
-11,TRUE,Budweiser,Clydesdales and football.,375,90,3,20,4.5,12
-12,TRUE,Coors Light,Shiny trains and surprisingly warm girls in snow.,375,90,3,30,4.5,12
-13,TRUE,Glider Cider,"Colorado Cider Co was founded to produce a fresh hard cider for the discerning Colorado drinker.  Crisp, tart & drinkable.",500,150,5,10,6.95,12
-14,TRUE,Grasshop-ah,Grasshop-ah is an ode to the botanical neighbors and flavors of grasses (Lemon Grass) and flowers (Hops).,575,175,5,20,6.95,12
+1,TRUE,HOSS RYE LAGER,"HOSS is based on the Märzen lagers of Germany. Rich, layered malt notes, with hints of cherry and dark fruits, dominate, while the unique addition of rye imparts a slightly earthy, spicy character.",400,150,4,10,0.062,16
+2,TRUE,BARREL AGED YETI,"The spirited aging process produces a hugely complex but mellowed Yeti, with its signature roasted flavors, hints of vanilla and oak, and a whiskeyed finish.  Who says you can’t tame a beast?",700,225,4,40,0.107,10
+3,TRUE,RUMBLE IPA,"RUMBLE IPA is an American IPA with subtle nuance. Brewed with heavy handed additions of Pacific Northwest hops, this beer is gently aged on French and American oak resulting in a wonderful balance of bitterness, caramel sweetness, vanilla, and undertones of pine and citrus.",400,125,4,20,0.071,16
+4,FALSE,PEACH GRAND CRU,"Brewed with Colorado fruit picked right at the peak of ripeness, this Belgian-style ale marries two of our home state’s well-known offerings: great beer and fresh Palisade peaches.",1000,350,4,50,0.12,10
+5,TRUE,DARK & STORMY,Gosling's Black Seal Rum and ginger beer,700,165,1,10,0.23,8
+6,TRUE,CASINO COCKTAIL,"Ransom Old Tom Gin, Leopold Bros. Maraschino,lemon and orange bitters",800,200,1,20,0.3,8
+7,TRUE,2011 Jacques Girardin Burgundy,"A bold, voluptuos red with soft tannins and a spicy finish",1400,400,2,30,0.12,4
+8,TRUE,2009 Predator Old Vine Zin,This one has some teeth!!,1000,350,2,20,0.12,4
+9,TRUE,2011 Sonoma Cutrer Chardonnay,"These grapes grow in the verdant Russian River Valley, producing a nice balance of fruit and vanilla.",1100,375,2,10,0.11,4
+10,TRUE,Pabst Blue Ribbon,Winner of World's Best Beer in 1893.,300,75,3,10,0.042,12
+11,TRUE,Budweiser,Clydesdales and football.,375,90,3,20,0.045,12
+12,TRUE,Coors Light,Shiny trains and surprisingly warm girls in snow.,375,90,3,30,0.045,12
+13,TRUE,Glider Cider,"Colorado Cider Co was founded to produce a fresh hard cider for the discerning Colorado drinker.  Crisp, tart & drinkable.",500,150,5,10,0.0695,12
+14,TRUE,Grasshop-ah,Grasshop-ah is an ode to the botanical neighbors and flavors of grasses (Lemon Grass) and flowers (Hops).,575,175,5,20,0.0695,12

@@ -23,6 +23,10 @@ class CartItem
     @quantity == 0 ? @quantity : @quantity -= 1
   end
 
+  def my_drink
+    false
+  end
+
   def subtotal
     item.price * quantity
   end

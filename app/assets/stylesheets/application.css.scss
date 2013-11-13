@@ -26,9 +26,30 @@ main {
   padding-right: 15px;
 }
 
+.flash {
+  padding-top: 10px 0;
+  text-align: center;
+}
+
 
 .logo {
   font-size: 2.5em;
   font-family: 'Pirata One', cursive;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: black;
+}
+
+.wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+footer {
+  height: 60px;
 }
 
