@@ -1,9 +1,11 @@
 class AdminController < ApplicationController
+  # before_action :can_access
+
   def index
-    # @orders = Order.all
+    # @orders = Order.all 
+    # @users = User.all
+    # @items = Item.all
+    # @order_items = OrderItem.all
   end
 
-  def show
-    # @order = Order.find(params[:id])
-  end
 end
