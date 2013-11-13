@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy, :confirm, :complete]
-  before_action :authorized_admin?, only: [:index, :edit, :update, :destroy]
-  before_action :logged_in?, only: [:show, :new, :create]
+  before_action :authorized_admin?, only: [:edit, :update, :destroy]
+  before_action :logged_in?, only: [:index, :show, :new, :create]
 
   def index
     if current_customer.admin
