@@ -34,7 +34,7 @@ class OrdersController < ApplicationController
     if @order.save
       @order.create_order_items(Cart.new(session[:cart]))
       session[:cart] = nil
-      redirect_to pay_for_order_path(@order.id), notice: 'Order was successfully created.'
+      redirect_to pay_for_order_path(@order.id)
     else
       redirect_to '/', notice: 'ERROR: order was not created.'
     end
@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'order was successfully updated.' }
+        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
       else
         format.html { render action: 'edit' }
       end
@@ -58,7 +58,7 @@ class OrdersController < ApplicationController
 
   def destroy
     @order.destroy
-    redirect_to items_url
+    redirect_to '/', notice: 'Order canceled.'
   end
 
 private
