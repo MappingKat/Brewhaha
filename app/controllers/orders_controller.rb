@@ -1,11 +1,11 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy, :confirm]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :confirm, :complete]
 
   def index
     if current_customer.admin
       @orders = Order.all
     elsif current_customer
-      @orders = Order.where(:customer_id => current_customer.id, :status => "complete")
+      @orders = Order.where(:customer_id => current_customer.id, :status => "paid")
     else
       @orders = nil
     end
@@ -28,10 +28,16 @@ class OrdersController < ApplicationController
     if @order.save
       @order.create_order_items(Cart.new(session[:cart]))
       session[:cart] = nil
-      redirect_to order_path(@order.id), notice: 'Order was successfully created.'
+      redirect_to pay_for_order_path(@order.id), notice: 'Order was successfully created.'
     else
       redirect_to '/', notice: 'ERROR: order was not created.'
     end
+  end
+
+  def complete
+    @order.status = "paid"
+    @order.save
+    redirect_to '/', notice: 'Order complete - Thank you!'
   end
 
   def update
