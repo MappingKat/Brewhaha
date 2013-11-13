@@ -21,8 +21,12 @@
             .col-md-12
               = yield
     %footer
-      .col-lg-4
-      %a{href: "/#"} Terms of service
-      +
-      %a{href: "/#"} Privacy policy
-      \© Brought to you by the happy people of ©Brewhaha
+      .container
+        .content
+          .row
+            .col-md-4
+              %a{href: "/#"} Terms of service
+              +
+              %a{href: "/#"} Privacy policy
+              \© Brought to you by the happy people of ©Brewhaha
+              = link_to 'Admin', admin_index_path, role: "button", class:"btn btn-mini"
