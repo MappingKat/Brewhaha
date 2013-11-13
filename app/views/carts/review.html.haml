@@ -1,25 +1,25 @@
 - unless admin?
-= render :partial => 'cart/cart'
-.row
-  .col-md-4
-    = link_to clear_cart_path, role: "button", method: :post, class: "btn btn-large btn-block btn-primary review-buttons" do
-      .review-button-2
-        Empty Cart
-        %br
-        Beer Killer!
-  .col-md-4
-    = link_to '/', role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
-      .review-button-2
-        Go back to cart.
-        %br
-        I need to add more tasty beverages!
-  .col-md-4
-    - if current_customer
-      = link_to payment_path, role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
-        .review-button-1
-          %strong
-            Send Order
-    - else
-      = link_to "/auth/twitter?use_authorize=true", role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
-        .review-button-1
-          To Complete Order Login with Twitter
+  = render :partial => 'cart/cart'
+  .row
+    .col-md-4
+      = link_to clear_cart_path, role: "button", method: :post, class: "btn btn-large btn-block btn-primary review-buttons" do
+        .review-button-2
+          Empty Cart
+          %br
+          Beer Killer!
+    .col-md-4
+      = link_to '/', role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
+        .review-button-2
+          Go back to cart.
+          %br
+          I need to add more tasty beverages!
+    .col-md-4
+      - if current_customer
+        = link_to payment_path, role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
+          .review-button-1
+            %strong
+              Send Order
+      - else
+        = link_to "/auth/twitter?use_authorize=true", role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
+          .review-button-1
+            To Complete Order Login with Twitter
