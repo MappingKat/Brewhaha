@@ -21,13 +21,8 @@ class OrdersController < ApplicationController
     @order = Order.new(:status => "pending", :customer_id => session[:customer_id])
     if @order.save
       @order.create_order_items(Cart.new(session[:cart]))
-      if session[:drinks].nil?
-        session[:drinks] = []
-      end
-      session[:drinks] += @order.my_drinks
-      binding.pry
       session[:cart] = nil
-      redirect_to '/', notice: 'Order was successfully created.'
+      redirect_to order_path(@order.id), notice: 'Order was successfully created.'
     else
       redirect_to '/', notice: 'ERROR: order was not created.'
     end

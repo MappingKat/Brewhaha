@@ -12,6 +12,10 @@
     %ul.nav.navbar-nav.navbar-right
       %li
         - if current_customer
+          Your current Blood Alcohol Content is: 
+          = blood_alcohol    
+      %li
+        - if current_customer
           = link_to "Logout", signout_path
         - else
           = link_to "Login with Twitter", "/auth/twitter?use_authorize=true"
