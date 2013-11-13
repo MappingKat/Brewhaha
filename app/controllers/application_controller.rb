@@ -18,20 +18,19 @@ private
 
   def blood_alcohol
     if current_customer.bac?
-      find_current_customer_drinks
-      BloodAlcohol.content(session[:drinks], current_customer.id)
+      BloodAlcohol.content(current_customer_drinks, current_customer.id)
     else
       "Cannot Calculate"
     end
   end
   helper_method :blood_alcohol
 
-  def find_current_customer_drinks
-    session[:drinks].nil? ? [] : session[:drinks]
+  def current_customer_drinks
     if current_customer
-      orders = current_customer.orders.find_all { |o| o.created_at.to_i < 2.days.ago.to_i }
-      binding.pry
-      # current_customer.orders.each { |o| session[:drinks] += o.my_drinks }
+      orders = current_customer.orders.find_all { |o| o.created_at.to_i - 2.days.ago.to_i > 0 }
+      orders.map { |o| o.my_drinks }.flatten
+    else
+      []
     end
   end
 

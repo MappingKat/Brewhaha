@@ -3,7 +3,7 @@ class BloodAlcohol
   class << self
 
     def content(loz_alcohol_by_time, cust_id)
-      return 0 if cust_id.nil?
+      return 0 if cust_id.nil? || loz_alcohol_by_time.empty?
       set_customer_stats(cust_id)
       calculate_bac(loz_alcohol_by_time)
     end
