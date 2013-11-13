@@ -2,18 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.cart{
+.cart {
   padding: 0;
   list-style: none;
 }
 
-.cart-item{
+.cart-item {
 }
 
-.review-buttons{
+.review-buttons {
   height: 75px;
 }
 
-.review-button{
+.review-button {
   padding-top: 20px;
+}
+
+.push-left {
+  padding-left: 20px;
 }

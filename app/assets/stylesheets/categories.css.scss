@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .category {
-
+  padding-left: 30px;
 }
 
 #table {
@@ -11,6 +11,16 @@
 }
 
 .drink-display {
-  height: 550px;
+  margin-top: 20px;
+  height: 525px;
   overflow: scroll;
+  margin-bottom: 15px;
+}
+
+.cart-alignment {
+  padding-top: 95px;
+}
+
+.displays-container {
+  padding: 0;
 }

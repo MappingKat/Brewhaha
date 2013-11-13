@@ -1,11 +1,20 @@
 .row
-  .col-md-8.drink-display
-    %h1 The Beverages:
+  .col-md-8
+    %h4 So many styles of beer, so little time...
     =render :partial => 'categories/nav'
-    .category
-      = render :partial => 'categories/listing', :locals => { :category => @category }
+    .drink-display
+      .displays-container
+        .displays.clearfix
+          .category
+            = render :partial => 'categories/listing', :locals => { :category => @category }
   .col-md-4
-    = render :partial => 'cart/cart'
+    .cart-alignment
+      .displays
+        = render :partial => 'cart/cart'
+        - if current_customer
+          = link_to 'Complete Order', review_cart_path, role: "button", class:"btn btn-large btn-block btn-primary"
+        - else
+          = link_to "To Complete Order Login with Twitter", "/auth/twitter?use_authorize=true", role: "button", class:"btn btn-large btn-block btn-primary"
 
 /<%= link_to 'Edit', edit_category_path(@category) %> |
 /<%= link_to 'Back', categories_path %>
