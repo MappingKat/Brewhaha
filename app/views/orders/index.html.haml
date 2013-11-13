@@ -1,0 +1,30 @@
+%h2 Here's a list of your previous orders:
+%table.table
+  %thead
+    %tr
+      %th Order #
+      %th Quantity
+      %th Beverage
+      %th Price
+      %th Total
+    - @orders.each do |o|
+      %tr
+        %td 
+          Order Number 
+          = o.id
+          - o.order_items.each do |oi| 
+            %tr
+              %td
+              %td
+                = oi.quantity
+              %td
+                = oi.item.name
+              %td
+                = oi.currency
+      %tr
+        %td
+        %td
+        %td
+        %td
+        %td
+          = o.currency

@@ -8,12 +8,13 @@ class Order < ActiveRecord::Base
   validates :customer_id, presence: true
 
   def create_order_items(cart)
+    this_id = id
     cart.cart_items.each do |ci|
       OrderItem.create(
           :item_id => ci.item_id,
           :quantity => ci.quantity,
           :price => ci.item.price,
-          :order_id => id
+          :order_id => this_id
         )
     end
   end
