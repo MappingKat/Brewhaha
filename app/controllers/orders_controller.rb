@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy, :confirm]
+  before_action :authorized_admin?, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in?, only: [:show, :new, :create]
 
   def index
     if current_customer.admin
@@ -12,7 +14,11 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order
+    if @order.customer_id == current_customer.id
+      @order
+    else
+      redirect_to root_path, notice: 'Not your order.'
+    end
   end
 
   def new
