@@ -38,6 +38,10 @@ class Cart
     cart_items.inject(0) { |total, ci| total + ci.subtotal }
   end
 
+  def empty?
+    cart_items.size == 0
+  end
+
   def price
     ActionController::Base.helpers.number_to_currency(total * 0.01)
   end
