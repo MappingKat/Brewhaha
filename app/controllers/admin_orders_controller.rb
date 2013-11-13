@@ -1,8 +1,10 @@
 class AdminOrdersController < ApplicationController
-  # before_action :can_access
   
   def index
     @orders = Order.all
+    @customers = Customer.all
+    @items = Item.all
+    @order_items = OrderItem.all
   end
 
   def show
