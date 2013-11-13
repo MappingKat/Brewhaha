@@ -1,15 +1,15 @@
 %tr
-  - if current_customer.admin == true
+  - if admin?
     %td= item.available
   %td.name= item.name
   %td= item.description
   %td= number_to_currency(item.price * 0.01)
-  - if current_customer.admin == true
+  - if admin?
     %td= item.cost
     %td= item.category.name
     %td= item.sort_order
   %td= link_to 'Add to Order', add_item_to_cart_path(item.id), role: "button", method: :post, class:"btn btn-success btn-sm"
-  - if current_customer.admin == true
+  - if admin?
     %td= link_to 'Show', item, role: "button", class:"btn btn-default"
     %td= link_to 'Edit', edit_item_path(item), role: "button", class:"btn btn-default"
     %td= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, role: "button", class:"btn btn-default"

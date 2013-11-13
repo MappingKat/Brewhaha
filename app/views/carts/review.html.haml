@@ -1,7 +1,7 @@
 = render :partial => 'cart/cart'
 .row
   .col-md-4
-    - if current_customer.admin == false
+    - unless admin?
       = link_to review_cart_path, role: "button", class:"btn btn-large btn-block btn-primary review-buttons" do
         .review-button
           Send Order

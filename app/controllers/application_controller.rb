@@ -16,4 +16,13 @@ private
   end
   helper_method :current_cart
 
+  def admin?
+    if current_customer != nil
+      current_customer.admin == true
+    else 
+      false
+    end
+  end
+  helper_method :admin?
+
 end

@@ -21,20 +21,12 @@
         .collapse.navbar-collapse.navbar-ex1-collapse
           %ul.nav.navbar-nav.side-nav
             %li.active
-              %a{href: "index.html"}
+              %a{href: "/"}
                 %i.fa.fa-dashboard
                 Admin:
             %li
               = link_to "All Orders", admin_orders_path
               %i.fa.fa-bar-chart-o
-            / %li
-            /   = link_to "Update Category",
-            /     edit_category_path
-            /   %i.fa.fa-bar-chart-o
-            / %li link id
-            /   = link_to "Update Items",
-            /     edit_item_path
-            /   %i.fa.fa-bar-chart-o
             %li
               = link_to "Create New Category",
                 new_category_path
