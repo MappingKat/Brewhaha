@@ -9,9 +9,10 @@
           %th Price
         %tbody
           - @order.order_items.each do |order_item|
-            %td= order_item.item.name
-            %td= order_item.quantity
-            %td= order_item.currency
+            %tr
+              %td= order_item.item.name
+              %td= order_item.quantity
+              %td= order_item.currency
   .row
     Order Total: #{@order.currency}
   .row

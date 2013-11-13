@@ -35,4 +35,7 @@ Brewhaha::Application.routes.draw do
   get 'admin', to: 'admin#index', as: :admin_index
   post 'admin_orders', to: 'admin_orders#show', as: :admin_orders
 
+  get 'payment', to: 'payment#index', as: :payment
+  get 'payment/confirm', to: 'payment#confirm', as: :payment_confirmation
+
 end
