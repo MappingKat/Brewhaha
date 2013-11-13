@@ -1,14 +1,14 @@
 %h3
-  Order##{@order.id}
-Date order placed: #{@order.updated_at.strftime('%m/%d/%Y')}
-%br/
-- @order.order_items.each do |order_item|
-  = order_item.item.name
-  %br/
-  Quantity: #{order_item.quantity}
-  %br/
-  Price :#{number_to_currency(order_item.item.price)}
-  %br/
-  %br/
-Order Total: #{number_to_currency(@order.total_price)}
-%br/
+  Order##{@order.id} - Date order placed: #{@order.updated_at.strftime('%m/%d/%Y')}
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Item
+        %th Quantity
+        %th Price
+      %tbody
+        - @order.order_items.each do |order_item|
+          %td= order_item.item.name
+          %td= order_item.quentity
+          %td= order_item.currency
+  Order Total: #{number_to_currency(@order.total_price)}

@@ -12,12 +12,14 @@
     %ul.nav.navbar-nav.navbar-right
       - if current_customer
         %li
-          Your current Blood Alcohol Content is: 
-          = blood_alcohol    
+          %p.navbar-text
+            Your current Blood Alcohol Content is:
+            %span.bac
+              = blood_alcohol
         %li
-          = button_to "Order History", orders_path, method: :get
+          = link_to "Order History", orders_path, method: :get
         %li
-          = button_to "Logout", signout_path, method: :get
+          = link_to "Logout", signout_path, method: :get
       - else
         %li
           = link_to "Login with Twitter", "/auth/twitter?use_authorize=true"
