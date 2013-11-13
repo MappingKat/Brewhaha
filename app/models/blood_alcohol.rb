@@ -25,10 +25,14 @@ class BloodAlcohol
   # r = alcohol distribution ratio (.73 men, .66 women)
   # H = period in hours which alcohol is eliminated
     def bac_per(drink)
-      hours = (DateTime.now.to_i - drink[:time].to_i) * 0.000277777777778
+      hours = calculate_hours(drink[:time])
       alcohol = drink[:loz]
       bac = ((alcohol * 5.14 / @weight * @adr) - (0.15 * hours)).round(3)
       bac < 0 ? 0 : bac
+    end
+
+    def calculate_hours(time)
+      hours = (DateTime.now.to_i - time.to_i) * 0.000277777777778
     end
 
     def alcohol_distribution_ratio
@@ -54,7 +58,7 @@ class BloodAlcohol
   #consider adding categories of drunkness to warn them not to drive
   #or make some jokes...
 
-  # clear session[:drinks on logout]
+  # clear session[:drinks] on logout
 
   end
 

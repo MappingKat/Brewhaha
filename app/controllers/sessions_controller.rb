@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:customer_id] = nil
+    session[:drinks] = nil
     redirect_to '/', notice: "Signed out!"
   end
 
