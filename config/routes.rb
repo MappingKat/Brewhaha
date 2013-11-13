@@ -34,9 +34,6 @@ Brewhaha::Application.routes.draw do
   delete 'orders/:id', to: 'orders#destroy'
   get 'orders/:id/confirm', to: 'orders#confirm', as: :confirm_order
 
-  get 'admin', to: 'admin#index', as: :admin_index
-  post 'admin_orders', to: 'admin_orders#show', as: :admin_orders
-
   get 'payment', to: 'payment#index', as: :payment
   get 'payment/confirm', to: 'payment#confirm', as: :payment_confirmation
 
