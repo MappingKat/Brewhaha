@@ -16,6 +16,15 @@ private
   end
   helper_method :current_cart
 
+  def admin?
+    if current_customer != nil
+      current_customer.admin == true
+    else 
+      false
+    end
+  end
+  helper_method :admin?
+
   def blood_alcohol
     if current_customer.bac?
       BloodAlcohol.content(current_customer_drinks, current_customer.id)
@@ -33,5 +42,4 @@ private
       []
     end
   end
-
 end

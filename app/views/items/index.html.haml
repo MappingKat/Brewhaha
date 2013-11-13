@@ -3,15 +3,15 @@
 %table
   %thead
     %tr
-      - if "this is where we check for admin"==true
+      - if admin?
         %th Available
       %th Name
       %th Description
       %th Price
-      - if "this is where we check for admin"==true
+      - if admin?
         %th Cost
       %th Category
-      - if "this is where we check for admin"==true
+      - if admin?
         %th Sort order
       %th
       %th

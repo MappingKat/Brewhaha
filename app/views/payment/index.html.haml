@@ -1,0 +1,41 @@
+.row.center
+  %h2 Payment
+.row
+  .col-md-2
+    %h4 Name
+    %input{type: 'text'}
+.row
+  .col-md-2
+    %h4 Address
+    %input{type: 'text'}
+  .col-md-2
+    %h4 City
+    %input{type: 'text'}
+  .col-md-2
+    %h4 State
+    %input{type: 'text'}
+  .col-md-2
+    %h4 Zipcode
+    %input{type: 'text'}
+.row
+  .col-md-2
+    %h4 Enter card:
+    %input{type: 'text'}
+  .col-md-2
+    %h4 Expiration (mmyy):
+    %input{type: 'text'}
+.row
+  .col-md-2
+    %h4 Confirm card:
+    %input{type: 'text'}
+.row
+  .col-md-4
+    .button-wrapper
+      =link_to payment_confirmation_path, role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
+        .review-button-1
+          Submit
+  .col-md-4
+    .button-wrapper
+      =link_to review_cart_path, role: "button", class: "btn btn-large btn-block btn-primary review-buttons" do
+        .review-button-1
+          Cancel
