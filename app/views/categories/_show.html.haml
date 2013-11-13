@@ -13,6 +13,7 @@
       .displays
         = render :partial => 'cart/cart'
         - if current_customer
-          = link_to 'Complete Order', review_cart_path, role: "button", class:"btn btn-large btn-block btn-primary"
+          - unless current_cart.empty?
+            = link_to 'Complete Order', review_cart_path, role: "button", class:"btn btn-large btn-block btn-primary"
         - else
           = link_to "To Complete Order Login with Twitter", "/auth/twitter?use_authorize=true", role: "button", class:"btn btn-large btn-block btn-primary"
