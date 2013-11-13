@@ -19,7 +19,6 @@ $(document).ready(function(){
   $(document).keydown(function(e) {
     e.preventDefault();
     if (e.which == 16) {
-      alert("show admin button")
     }
   });
 });
