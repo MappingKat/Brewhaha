@@ -33,6 +33,7 @@ class BloodAlcohol
 
     def calculate_hours(time)
       hours = (DateTime.now.to_i - time.to_i) * 0.000277777777778
+      #you could try dividing by 3600 as well.
     end
 
     def alcohol_distribution_ratio

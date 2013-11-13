@@ -23,5 +23,9 @@
       %th
       %th
     %tbody
-      - category.items.each do |item|
-        = render :partial => 'items/listing', :locals => { :item => item }
+      - if admin?
+        - category.items.each do |item|
+          = render :partial => 'items/listing', :locals => { :item => item }
+      - else
+        - category.available_items.each do |item|
+          = render :partial => 'items/listing', :locals => { :item => item }

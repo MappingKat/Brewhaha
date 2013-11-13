@@ -19,11 +19,23 @@ private
   def admin?
     if current_customer != nil
       current_customer.admin == true
-    else 
+    else
       false
     end
   end
   helper_method :admin?
+
+  def authorized_admin?
+    unless admin?
+      redirect_to root_path, notice: 'Not logged in as admin.'
+    end
+  end
+
+  def logged_in?
+    unless current_customer
+      redirect_to root_path, notice: 'You must log in to continue.'
+    end
+  end
 
   def blood_alcohol
     if current_customer.bac?
