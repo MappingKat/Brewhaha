@@ -13,4 +13,5 @@
           = render :partial => 'cart/cart_item', :locals => { :cart_item => cart_item }
   %li.push-left
     -if current_cart.empty?
-      Cart is empty. Order Up!
+      %h3.empty
+        Cart is empty. Order Up!
