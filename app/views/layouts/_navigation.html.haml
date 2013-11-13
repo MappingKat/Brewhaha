@@ -10,7 +10,12 @@
   / Collect the nav links, forms, and other content for toggling
   #bs-example-navbar-collapse-1.collapse.navbar-collapse
     %ul.nav.navbar-nav.navbar-right
-      - if current_customer
+      - if admin?
+        %li
+          = link_to "View Orders", admin_orders_path, method: :get
+        %li
+          = link_to "Logout", signout_path, method: :get
+      - elsif current_customer
         %li
           %p.navbar-text
             Your current Blood Alcohol Content is:
