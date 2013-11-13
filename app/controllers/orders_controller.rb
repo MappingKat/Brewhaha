@@ -2,7 +2,13 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy, :confirm]
 
   def index
-    @orders = Order.all
+    if current_customer.admin
+      @orders = Order.all
+    elsif current_customer
+      @orders = Order.where(:customer_id => current_customer.id, :status => "complete")
+    else
+      @orders = nil
+    end
   end
 
   def show

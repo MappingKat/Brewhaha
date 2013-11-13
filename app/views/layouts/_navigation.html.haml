@@ -10,13 +10,15 @@
   / Collect the nav links, forms, and other content for toggling
   #bs-example-navbar-collapse-1.collapse.navbar-collapse
     %ul.nav.navbar-nav.navbar-right
-      %li
-        - if current_customer
+      - if current_customer
+        %li
           Your current Blood Alcohol Content is: 
           = blood_alcohol    
-      %li
-        - if current_customer
-          = link_to "Logout", signout_path
-        - else
+        %li
+          = button_to "Order History", orders_path, method: :get
+        %li
+          = button_to "Logout", signout_path, method: :get
+      - else
+        %li
           = link_to "Login with Twitter", "/auth/twitter?use_authorize=true"
 
