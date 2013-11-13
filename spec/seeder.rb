@@ -17,7 +17,9 @@ class Seeder
         "category_id" => row[:category_id],
         "price"       => row[:price],
         "cost"        => row[:cost],
-        "sort_order"  => row[:sort_order]
+        "sort_order"  => row[:sort_order],
+        "abv"         => row[:abv],
+        "volume"      => row[:volume]
       })
     end
   end

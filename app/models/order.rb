@@ -25,4 +25,9 @@ class Order < ActiveRecord::Base
   def currency
     ActionController::Base.helpers.number_to_currency(total * 0.01)
   end
+
+  def my_drinks
+    #need to add myDrink boolean check
+    order_items.map { |oi| {time: oi.created_at, loz: oi.loz_alcohol} }
+  end
 end
