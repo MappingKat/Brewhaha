@@ -10,7 +10,6 @@ class Seeder
   def self.load_items_csv
     item_csv_data.each do |row|
       Item.create({
-        "id"          => row[:id],
         "available"   => row[:available],
         "name"        => row[:name],
         "description" => row[:description],

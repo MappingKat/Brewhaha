@@ -8,13 +8,9 @@
 
 require './spec/seeder'
 
-Item.destroy_all
-Seeder.load_items_csv
-
 Category.destroy_all
 
 Category.create(
-    id:           1,
     available:    TRUE,
     name:         "Cocktails",
     description:  "Let's give my tastebuds something new to enjoy.",
@@ -22,7 +18,6 @@ Category.create(
   )
 
 Category.create(
-    id:           2,
     available:    TRUE,
     name:         "Wine",
     description:  "A thousand years of tradition can't be wrong.",
@@ -30,7 +25,6 @@ Category.create(
   )
 
 Category.create(
-    id:           3,
     available:    TRUE,
     name:         "Plain ol' Beer",
     description:  "I want a beer I recognize from TV ads.",
@@ -38,7 +32,6 @@ Category.create(
   )
 
 Category.create(
-    id:           4,
     available:    TRUE,
     name:         "Craft Beer",
     description:  "Brewing beer is an artform and I want a masterpiece.",
@@ -46,17 +39,18 @@ Category.create(
   )
 
 Category.create(
-    id:           5,
     available:    TRUE,
     name:         "Ciders",
     description:  "Johnny Appleseed in a pint glass.",
     sort_order:   50,
   )
 
+Item.destroy_all
+Seeder.load_items_csv
+
 Customer.destroy_all
 
 Customer.create(
-    id:           1,
     display_name: "TheRubeAbides",
     admin:        false,
     name:         "Brian Winterling",
@@ -68,7 +62,6 @@ Customer.create(
   )
 
 Customer.create(
-    id:           2,
     display_name: "MappingKat",
     admin:        true,
     name:         "Katrina Engelsted",
@@ -78,7 +71,6 @@ Customer.create(
   )
 
 Customer.create(
-    id:           3,
     display_name: "myShadyBaby",
     admin:        true,
     name:         "ShadyBaby - Brian",
@@ -88,7 +80,6 @@ Customer.create(
   )
 
 Customer.create(
-  id: 4,
   display_name: "QuillyT",
   admin: true,
   name: "Quentin Tai",
