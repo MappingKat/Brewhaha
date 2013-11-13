@@ -11,8 +11,7 @@ class BloodAlcohol
     def set_customer_stats(cust_id)
       cust = Customer.find(cust_id)
       @weight = cust.weight
-      @sex = cust.sex
-      @adr = alcohol_distribution_ratio
+      @adr = alcohol_distribution_ratio(cust.sex)
     end
 
     def calculate_bac(loz_alcohol_by_time)
@@ -27,7 +26,7 @@ class BloodAlcohol
     def bac_per(drink)
       hours = calculate_hours(drink[:time])
       alcohol = drink[:loz]
-      bac = ((alcohol * 5.14 / @weight * @adr) - (0.15 * hours)).round(3)
+      bac = ((alcohol * 5.14 / @weight * @adr) - (0.015 * hours)).round(3)
       bac < 0 ? 0 : bac
     end
 
@@ -36,8 +35,8 @@ class BloodAlcohol
       #you could try dividing by 3600 as well.
     end
 
-    def alcohol_distribution_ratio
-      case @sex
+    def alcohol_distribution_ratio(sex)
+      case sex
       when "male"    then 0.73
       when "female"  then 0.66
       end
