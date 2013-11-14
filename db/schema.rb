@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131112222309) do
+ActiveRecord::Schema.define(version: 20131114223709) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "addresses", force: true do |t|
     t.string   "line1"
@@ -42,8 +45,8 @@ ActiveRecord::Schema.define(version: 20131112222309) do
     t.string   "provider"
     t.string   "image"
     t.string   "name"
-    t.integer  "weight"
-    t.string   "sex"
+    t.integer  "weight",       default: 130
+    t.string   "sex",          default: "male"
   end
 
   create_table "items", force: true do |t|
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 20131112222309) do
     t.decimal  "volume"
   end
 
-  add_index "items", ["category_id"], name: "index_items_on_category_id"
+  add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
 
   create_table "order_items", force: true do |t|
     t.integer  "order_id"
