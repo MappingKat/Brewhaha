@@ -7,5 +7,7 @@ FactoryGirl.define do
     f.price 500
     f.cost 200
     f.sort_order 10
+    f.abv 0.065
+    f.volume 12
   end
 end

@@ -65,6 +65,8 @@ Customer.create(
     display_name: "MappingKat",
     admin:        true,
     name:         "Katrina Engelsted",
+    weight:       115,
+    sex:          "female",
     provider:     "twitter",
     uid:          "386676260",
     image:        "http://pbs.twimg.com/profile_images/2591519611/cu3a0rg573rerw0sf8iw_normal.png"
@@ -80,10 +82,12 @@ Customer.create(
   )
 
 Customer.create(
-  display_name: "QuillyT",
-  admin: true,
-  name: "Quentin Tai",
-  provider: "twitter",
-  uid: "20703965",
-  image: "http://pbs.twimg.com/profile_images/1858010175/313339_10100210771768496_1510176_48196641_1670461624_n_normal.jpg"
-)
+    display_name: "QuillyT",
+    admin:        true,
+    name:         "Quentin Tai",
+    weight:       145,
+    sex:          "male",
+    provider:     "twitter",
+    uid:          "20703965",
+    image:        "http://pbs.twimg.com/profile_images/1858010175/313339_10100210771768496_1510176_48196641_1670461624_n_normal.jpg"
+  )
