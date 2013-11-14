@@ -1,5 +1,5 @@
 body {
-  background-image: image-url(barrels.jpg);
+  background-image: image-url("barrels.jpg");
   background-color: #000;
   color: #ffffff;
   font-size: 14px;
@@ -33,7 +33,7 @@ div {
 }
 
 .displays {
-  background: image-url(transparent_background.png);
+  background: image-url("transparent_background.png");
 }
 
 #notice {
