@@ -16,9 +16,6 @@ ActiveRecord::Schema.define(version: 20131114223709) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "addresses", force: true do |t|
     t.string   "line1"
     t.string   "line2"
