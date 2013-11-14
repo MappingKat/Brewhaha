@@ -22,7 +22,11 @@ class Cart
 
   def subtract_item(item_id)
     if find_cart_item(item_id)
-      find_cart_item(item_id).subtract
+      if find_cart_item(item_id).quantity > 1
+        find_cart_item(item_id).subtract
+      else
+        delete_item(item_id)
+      end
     end
   end
 
