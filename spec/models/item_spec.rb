@@ -2,8 +2,7 @@ require 'spec_helper'
 
 describe Item do
   it "has a valid factory" do
-    item = FactoryGirl.create(:item).
-    should be_valid
+    FactoryGirl.create(:item).should be_valid
   end
 
   context "when it does not have an item name"

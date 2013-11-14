@@ -46,6 +46,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'faker'
+  # gem 'simplecov', require: false
   # gem 'guard-rspec'
 end
 
