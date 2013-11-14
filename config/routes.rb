@@ -7,7 +7,6 @@ Brewhaha::Application.routes.draw do
   #get 'admin', to: 'admin#index', as: admin
   resources :admin_orders
   #post 'admin', to:admin_orders#index, as: admin_orders
-  #
 
   get 'auth/twitter/callback', to: 'sessions#create'
   # here is the omniauth callback route, which would be agnostic to provider
