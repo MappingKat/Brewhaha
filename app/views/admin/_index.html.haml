@@ -21,12 +21,14 @@
         .collapse.navbar-collapse.navbar-ex1-collapse
           %ul.nav.navbar-nav.side-nav
             %li.active
-              %a{href: "/signout"}
-                %i.fa.fa-dashboard
-                Logout
-            %li
               = link_to "All Orders", admin_orders_path
               %i.fa.fa-bar-chart-o
+            %li
+              = link_to "Edit Drinks", items_path
+              %i.fa.fa-bar-chart-o
+            %li
+              = link_to "Edit Categories", edit_all_categories_path
+              %i.fa.fa-bar-chart-o 
             %li
               = link_to "Create New Category",
                 new_category_path
@@ -35,6 +37,7 @@
               = link_to "Create New Item",
                 new_item_path   
               %i.fa.fa-bar-chart-o 
+            
           %ul.nav.navbar-nav.navbar-right.navbar-user
             %li.dropdown.messages-dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
@@ -132,11 +135,11 @@
                     %i.fa.fa-gear
                     Settings
                 %li.divider
-                %li
-                  %a{href: "#"}
-                    %i.fa.fa-power-off
-                    Log Out
-        / /.navbar-collapse
+            %li
+            %a{href: "/signout"}
+              %i.fa.fa-dashboard
+              Logout
+       
       #page-wrapper
         .row
           .col-lg-12
@@ -148,15 +151,7 @@
                 %i.fa.fa-dashboard
                 Statistics Overview
             .alert.alert-success.alert-dismissable
-              %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} ×
-              / - if current_customer
-              /   %span
-              /     Welcome back, #{current_customer.name}
-              /   = link_to "logout", logout_path, id: "login"
-              / - else
-              /   = link_to "login", login_path, id: "logout"
-              / check out what's been going on since you were last here.
-        / /.row
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"} 
         .row
           .col-lg-3
             .panel.panel-info
