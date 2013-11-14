@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-gem 'pg'
 
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 gem 'haml-rails', '>= 0.3.4'
@@ -40,13 +38,16 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'pry-rails'
   gem 'factory_girl_rails'
-end
-
-group :test do
+  gem 'sqlite3'
   gem 'capybara'
   gem 'launchy'
   gem 'faker'
   # gem 'guard-rspec'
+end
+
+group :production, :staging do 
+  gem 'rails_12factor'
+  gem 'pg'
 end
 
 # Authentication
