@@ -1,14 +1,12 @@
 Brewhaha::Application.routes.draw do
+  root to: 'categories#index'
   resources :categories
   resources :items
-
   resources :customers
-
   resources :admin
-
+  #get 'admin', to: 'admin#index', as: admin
   resources :admin_orders
-
-  root to: 'categories#index'
+  #post 'admin', to:admin_orders#index, as: admin_orders
 
   get 'auth/twitter/callback', to: 'sessions#create'
   # here is the omniauth callback route, which would be agnostic to provider

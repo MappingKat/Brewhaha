@@ -1,5 +1,5 @@
 body {
-  background-image: url(barrels.jpg);
+  background-image: image-url("barrels.jpg");
   background-color: #000;
   color: #ffffff;
   font-size: 14px;
@@ -33,7 +33,7 @@ div {
 }
 
 .displays {
-  background: url(transparent_background.png);
+  background: image-url("transparent_background.png");
 }
 
 #notice {
@@ -53,7 +53,8 @@ div {
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
-  h2 {
+
+h2 {
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
@@ -63,14 +64,10 @@ div {
     background-color: #c00;
     color: #fff;
   }
-  ul li {
+
+ul li {
     font-size: 12px;
     list-style: square;
   }
-
-  btn {
-  
-  }
-
  
 }

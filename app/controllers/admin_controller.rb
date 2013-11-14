@@ -3,10 +3,10 @@ class AdminController < ApplicationController
 
   def index
     authorized_admin?
-    # @orders = Order.all 
-    # @users = User.all
-    # @items = Item.all
-    # @order_items = OrderItem.all
+    @orders = Order.all 
+    @users = User.all
+    @items = Item.all
+    @order_items = OrderItem.all
   end
 
 end
