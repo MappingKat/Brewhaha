@@ -1,6 +1,11 @@
 Brewhaha::Application.routes.draw do
   root to: 'categories#index'
-  resources :categories
+  resources :categories do
+    collection do
+      get "edit_all"
+    end
+  end
+  
   resources :items
   resources :customers
   resources :admin
@@ -34,4 +39,5 @@ Brewhaha::Application.routes.draw do
   get 'orders/:id/pay', to: 'orders#pay', as: :pay_for_order
   get 'orders/:id/complete', to: 'orders#complete', as: :complete_order
 
+  get 'about', to: 'about', as: :about
 end

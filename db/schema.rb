@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20131112222309) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: true do |t|
     t.string   "line1"
     t.string   "line2"
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 20131112222309) do
     t.decimal  "volume"
   end
 
-  add_index "items", ["category_id"], name: "index_items_on_category_id"
+  add_index "items", ["category_id"], name: "index_items_on_category_id", using: :btree
 
   create_table "order_items", force: true do |t|
     t.integer  "order_id"

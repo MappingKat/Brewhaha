@@ -22,6 +22,10 @@ class CategoriesController < ApplicationController
   def edit
   end
 
+  def edit_all
+    @categories = Category.all
+  end
+
   # POST /categories
   # POST /categories.json
   def create
